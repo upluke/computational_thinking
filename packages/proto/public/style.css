@@ -7,9 +7,15 @@
 }
 
 body {
-  font-family: "Bebas Neue", sans-serif;
+  font-family: sans-serif;
   color: #222;
   padding-bottom: 50px;
+  background-color: #dad7cd;
+}
+
+header {
+  background-color: #344e41;
+  font-family: "Bebas Neue", sans-serif;
 }
 
 .container {
@@ -28,6 +34,7 @@ body {
   text-align: center;
   position: relative;
   margin-bottom: 20px;
+  color: #344e41;
 }
 
 .hero h1 {
