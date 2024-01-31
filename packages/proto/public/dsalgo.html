@@ -2,29 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Boxiocns CDN Link -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/tokens.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <title>DS&Algo</title>
   </head>
   <body>
-    <div class="sidebar close">
+    <div class="sidebar">
       <!-- <h1>DS&ALGO page</h1>-->
-      <a href="index.html"> Click Here to Go Back Home </a>
+      <!-- <a href="index.html"> Click Here to Go Back Home </a> -->
       <div class="logo-details">
+        <a href="./index.html"><i class="bx bx-home-alt"></i></a>
         <span class="logo-name">Data Structure & Algorithm</span>
       </div>
       <ul class="nav-links">
-        <!-- Guide -->
-        <li>
-          <a href="#">
-            <span class="link_name">Guide</span>
-          </a>
-        </li>
         <!-- Arrays  -->
         <li>
           <div class="icon-link">
             <a href="#">
+              <i class="bx bx-grid"></i>
               <span class="link_name">Arrays</span>
             </a>
             <i class="bx bxs-chevron-down arrow"></i>
@@ -39,41 +41,40 @@
               >
             </li>
             <li>
-              <a
-                href="./pages//dsalgo/dynamic_array.html"
-                target="contentFrame"
-                class="link_name"
+              <a href="./pages/dsalgo/dynamic_array.html" target="contentFrame"
                 >Dynamic Arrays</a
               >
             </li>
-            <li><a href="#" class="link_name">Stacks</a></li>
+            <li><a href="#">Stacks</a></li>
           </ul>
         </li>
         <!-- Linked Lists  -->
         <li>
           <div class="icon-link">
             <a href="#">
+              <i class="bx bx-git-commit"></i>
               <span class="link_name">Linked Lists</span>
             </a>
-            <i class="arrow"></i>
+            <i class="bx bxs-chevron-down arrow"></i>
           </div>
           <ul class="sub-menu">
             <li><a href="#" class="link_name">Singly Linked Lists</a></li>
-            <li><a href="#" class="link_name">Doubly Linked Lists</a></li>
-            <li><a href="#" class="link_name">Queues</a></li>
+            <li><a href="#">Doubly Linked Lists</a></li>
+            <li><a href="#">Queues</a></li>
           </ul>
         </li>
         <!-- Recursiion  -->
         <li>
           <div class="icon-link">
             <a href="#">
+              <i class="bx bx-reset"></i>
               <span class="link_name">Recursion</span>
             </a>
             <i class="arrow"></i>
           </div>
           <ul class="sub-menu">
             <li><a href="#" class="link_name">Recursion 1</a></li>
-            <li><a href="#" class="link_name">Recursion 2</a></li>
+            <li><a href="#">Recursion 2</a></li>
           </ul>
         </li>
       </ul>
@@ -81,5 +82,11 @@
     <div id="content">
       <iframe name="contentFrame"></iframe>
     </div>
+    <script>
+      window.onload = function () {
+        var contentFrame = document.getElementsByName("contentFrame")[0];
+        contentFrame.src = "./pages/dsalgo/static_array.html";
+      };
+    </script>
   </body>
 </html>
