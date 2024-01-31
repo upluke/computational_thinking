@@ -249,6 +249,7 @@ header li.active a {
 /* side page */
 .side-page {
   position: fixed;
+  padding-left: 20px;
   top: 0;
   left: 0;
   height: 100%;
