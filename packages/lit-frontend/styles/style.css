@@ -31,45 +31,10 @@ header {
 header * {
   display: inline;
 }
-
-.logo a {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-size: xxx-large;
-  margin-left: 20px;
-}
-
-svg.icon {
-  padding-top: 4px;
-  /* display: inline; */
-  height: 1.6em;
-  width: 1.6em;
-  vertical-align: top;
-  fill: currentColor;
-}
-
-header li {
-  margin: 20px;
-}
-
-header li a {
-  color: #344e41;
-  font-size: x-large;
-  text-decoration: none;
-}
-
-header li.active a {
-  color: #588157;
-}
-
-.nav a:hover {
-  color: #588157;
-}
-
-.container {
+/* .container {
   max-width: 1200px;
   margin: 0 auto;
-}
+} */
 
 .hero {
   background-color: var(--hero-background-color);

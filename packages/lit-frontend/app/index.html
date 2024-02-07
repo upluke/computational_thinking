@@ -6,11 +6,44 @@
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/tokens.css">
     <link rel="stylesheet" href="../styles/style.css">
+    <script type="module" src="../components/drop-down.ts"></script>
+    <script type="module" src="../components/nav-bar.ts"></script>
+    <script type="module" src="../components/user-panel.ts"></script>
     <title>Computational Thinking</title>
+    <style>
+      /* CSS to clean up the demo */
+ 
+    </style>
   </head>
   <body>
-    <!-- Nav Bar -->
+    <nav class="menu-bar">
+      
+      <drop-down>
+        File
+        <ul slot="menu">
+          <li>New…</li>
+          <li><hr /></li>
+          <li>Open…</li>
+          <li>Open Recent</li>
+          <li><hr /></li>
+          <li>Save</li>
+          <li>Save As…</li>
+          <li>Revert to Last Saved</li>
+          <li><hr /></li>
+          <li>Close</li>
+        </ul>
+      </drop-down>
+      <drop-down> Edit </drop-down>
+      <drop-down> View </drop-down>
+      <drop-down> Help </drop-down>
+    </nav>
     <header>
+      <nav-bar> </nav-bar>
+      <user-panel></user-panel>
+    </header>
+
+    <!-- Nav Bar -->
+    <!-- <header>
       <nav class="nav">
         <div class="container">
           <h1 class="logo">
@@ -27,12 +60,15 @@
           </ul>
         </div>
       </nav>
-    </header>
+    </header> -->
 
     <main>
+      
     <!-- Hero -->
       <div class="hero">
         <div class="container">
+          
+
           <h1>Welcome to Computational Thinking!!!</h1>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci,
