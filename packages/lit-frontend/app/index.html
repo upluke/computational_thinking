@@ -3,20 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/tokens.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/tokens.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <script type="module" src="../components/drop-down.ts"></script>
+    <script type="module" src="../components/nav-bar.ts"></script>
+    <script type="module" src="../components/user-panel.ts"></script>
     <title>Computational Thinking</title>
+    <style>
+      /* CSS to clean up the demo */
+ 
+    </style>
   </head>
   <body>
-    <!-- Nav Bar -->
+    <nav class="menu-bar">
+      
+      <drop-down>
+        File
+        <ul slot="menu">
+          <li>New…</li>
+          <li><hr /></li>
+          <li>Open…</li>
+          <li>Open Recent</li>
+          <li><hr /></li>
+          <li>Save</li>
+          <li>Save As…</li>
+          <li>Revert to Last Saved</li>
+          <li><hr /></li>
+          <li>Close</li>
+        </ul>
+      </drop-down>
+      <drop-down> Edit </drop-down>
+      <drop-down> View </drop-down>
+      <drop-down> Help </drop-down>
+    </nav>
     <header>
+      <nav-bar> </nav-bar>
+      <user-panel></user-panel>
+    </header>
+
+    <!-- Nav Bar -->
+    <!-- <header>
       <nav class="nav">
         <div class="container">
           <h1 class="logo">
             <a href="#">  
               <svg class="icon">
-                <use href="/icons/icons.svg#web-icon" />
+                <use href="../icons/icons.svg#web-icon" />
               </svg>  
             </a>
           </h1>
@@ -27,12 +60,15 @@
           </ul>
         </div>
       </nav>
-    </header>
+    </header> -->
 
     <main>
+      
     <!-- Hero -->
       <div class="hero">
         <div class="container">
+          
+
           <h1>Welcome to Computational Thinking!!!</h1>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci,
@@ -52,7 +88,7 @@
             commodi nobis nostrum! Nobis soluta eos, illo quisquam reiciendis
             omnis nam fugiat sint distinctio totam! Laborum illum iusto dicta
             ratione fuga!
-          </p
+          </p>
   
           <a href="dsalgo.html"><button class="button" role="button">Check it out</button></a>
           
