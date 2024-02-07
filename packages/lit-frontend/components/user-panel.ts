@@ -4,8 +4,6 @@ import { html, css, LitElement } from "lit";
 
 @customElement("user-panel")
 export class UserPanel extends LitElement {
-  //   private router = new Router(this, [{ path: "/", component: "home-view" }]);
-
   static styles = css`
     :host {
       display: block;

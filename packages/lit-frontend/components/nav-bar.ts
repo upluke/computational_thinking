@@ -29,9 +29,10 @@ export class NavBar extends LitElement {
 
   static styles = css`
     .nav .container {
-      background-color: blue;
+      //background-color: blue;
       max-width: 1200px;
       margin: 0 auto;
+      display: flex;
     }
     .logo a {
       color: var(--primary-color);
@@ -48,7 +49,11 @@ export class NavBar extends LitElement {
       vertical-align: top;
       fill: currentColor;
     }
-
+    ul {
+      display: flex;
+      list-style-type: none;
+      padding-top: 8px;
+    }
     li {
       margin: 20px;
     }
