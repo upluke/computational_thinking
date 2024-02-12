@@ -1,6 +1,6 @@
 import { css, html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { Router } from "@vaadin/router";
+
 @customElement("drop-down")
 export class DropDownElement extends LitElement {
   @property({ reflect: true, type: Boolean })
@@ -15,17 +15,7 @@ export class DropDownElement extends LitElement {
         .checked=${this.open}
       />
       <label for="is-shown"><slot>Menu</slot></label>
-      <slot name="menu">
-        <ul slot="menu">
-          <span class="user-name">Mike</span
-          ><br />
-          <li><a class="user-link" href="/#">About</a></li>
-          <li>
-            <a class="user-link" @click=${this.navigateToProfile}>Profile</a>
-          </li>
-          <a class="sign-out" @click=${this.signOut}>Sign out</a>
-        </ul>
-      </slot>
+      <slot name="menu">No menu </slot>
     `;
   }
 
@@ -109,11 +99,5 @@ export class DropDownElement extends LitElement {
     } else {
       document.removeEventListener("click", clickawayHandler);
     }
-  }
-  signOut() {
-    console.log("Signing out...");
-  }
-  navigateToProfile() {
-    Router.go("/user-profile");
   }
 }
