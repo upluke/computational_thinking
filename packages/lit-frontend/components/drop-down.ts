@@ -1,6 +1,6 @@
 import { css, html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-
+import { Router } from "@vaadin/router";
 @customElement("drop-down")
 export class DropDownElement extends LitElement {
   @property({ reflect: true, type: Boolean })
@@ -15,11 +15,15 @@ export class DropDownElement extends LitElement {
         .checked=${this.open}
       />
       <label for="is-shown"><slot>Menu</slot></label>
-      <slot name= "menu">
-        <ul>
-            <li>Command 1</li>
-            <l1>Command 2</li>
-            <l1>Command 3</l1>
+      <slot name="menu">
+        <ul slot="menu">
+          <span class="user-name">Mike</span
+          ><br />
+          <li><a class="user-link" href="/#">About</a></li>
+          <li>
+            <a class="user-link" @click=${this.navigateToProfile}>Profile</a>
+          </li>
+          <a class="sign-out" @click=${this.signOut}>Sign out</a>
         </ul>
       </slot>
     `;
@@ -61,6 +65,26 @@ export class DropDownElement extends LitElement {
       list-style: none;
       white-space: nowrap;
     }
+    /* css for user-panel */
+
+    .user-name {
+      font-weight: bold;
+    }
+
+    .user-link {
+      color: var(--hero-background-color);
+      text-decoration: none;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .sign-out {
+      color: green;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 16px;
+      display: block;
+    }
   `;
   _handleChange(ev: InputEvent) {
     const target = ev.target as HTMLInputElement;
@@ -85,5 +109,11 @@ export class DropDownElement extends LitElement {
     } else {
       document.removeEventListener("click", clickawayHandler);
     }
+  }
+  signOut() {
+    console.log("Signing out...");
+  }
+  navigateToProfile() {
+    Router.go("/user-profile");
   }
 }

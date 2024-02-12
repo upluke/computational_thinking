@@ -72,6 +72,7 @@ export class NavBar extends LitElement {
       color: #588157;
     }
   `;
+
   _handleChange(ev: InputEvent) {
     const target = ev.target as HTMLInputElement;
     this._toggle(target.checked);
