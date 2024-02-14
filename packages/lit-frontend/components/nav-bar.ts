@@ -1,6 +1,7 @@
 import { css, html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-
+import "./toggle-switch";
+import { ToggleSwitchElement } from "./toggle-switch";
 @customElement("nav-bar")
 export class NavBar extends LitElement {
   @property({ reflect: true, type: Boolean })
@@ -22,6 +23,9 @@ export class NavBar extends LitElement {
             <li><a href="dsalgo.html">Data Structure & Algorithm</a></li>
             <li><a href="bigo.html">Big-O</a></li>
           </ul>
+          <toggle-switch @change=${this._toggleDarkMode}>
+            Dark Mode
+          </toggle-switch>
         </div>
       </nav>
     `;
@@ -96,5 +100,15 @@ export class NavBar extends LitElement {
     } else {
       document.removeEventListener("click", clickawayHandler);
     }
+  }
+
+  _toggleDarkMode(ev: InputEvent) {
+    const target = ev.target as ToggleSwitchElement;
+    const body = document.body;
+
+    console.log("Toggling Dark mode", ev);
+
+    if (target?.on) body.classList.add("dark-mode");
+    else body.classList.remove("dark-mode");
   }
 }
