@@ -10,7 +10,7 @@ export class NavBar extends LitElement {
   render() {
     return html`
       <nav class="nav">
-        <div class="container">
+        <div class="nav-left">
           <h1 class="logo">
             <a href="#">
               <svg class="icon">
@@ -23,20 +23,38 @@ export class NavBar extends LitElement {
             <li><a href="dsalgo.html">Data Structure & Algorithm</a></li>
             <li><a href="bigo.html">Big-O</a></li>
           </ul>
+        </div>
+        <div class="nav-right">
           <toggle-switch @change=${this._toggleDarkMode}>
             Dark Mode
           </toggle-switch>
+          <drop-down>
+            <img
+              class="user-avatar"
+              src="https://www.svgrepo.com/show/382112/female-avatar-girl-face-woman-user-8.svg"
+              alt="User Avatar"
+            />
+            <user-panel slot="menu"></user-panel>
+          </drop-down>
         </div>
       </nav>
     `;
   }
 
   static styles = css`
-    .nav .container {
-      //background-color: blue;
+    .nav {
       max-width: 1200px;
+      width: 100%;
       margin: 0 auto;
       display: flex;
+      justify-content: space-between;
+    }
+    .nav-left {
+      display: flex;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
     }
     .logo a {
       color: var(--primary-color);
@@ -74,6 +92,21 @@ export class NavBar extends LitElement {
 
     .nav a:hover {
       color: #588157;
+    }
+
+    /* avatar */
+
+    .user-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 12px;
+    }
+
+    .user-info {
+      /* display: flex; */
+      /* align-items: center; */
+      margin-bottom: 12px;
     }
   `;
 

@@ -30,28 +30,28 @@ export class ToggleSwitchElement extends LitElement {
     }
     .slider {
       display: inline-block;
-      border: 1px solid var(--color-border-control);
+      border: 1px solid var(--primary-color);
       border-radius: 0.75em;
-      background-color: var(--color-background-control);
+      background-color: var(--secondary-color);
       height: 1.5em;
       width: 2.75em;
       position: relative;
-      transition: background-color var(--time-transition-control);
+      transition: background-color var(--background-color);
     }
     .slider:has(input:checked) {
-      background-color: var(--color-accent);
+      background-color: red;
     }
     input {
       appearance: none;
       cursor: pointer;
-      background-color: var(--color-foreground-control);
+      background-color: blue);
       border-radius: 50%;
       width: 1.25em;
       height: 1.25em;
       font-size: inherit;
       position: absolute;
       left: 0;
-      transition: left var(--time-transition-control);
+      transition: left var(--transition-duration);
     }
     input:checked {
       left: 1.5em;
