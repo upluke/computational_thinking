@@ -38,8 +38,10 @@ export class DropDownElement extends LitElement {
       position: absolute;
       top: 100%;
       left: 0;
-      border: 1px solid;
-      background: white;
+      margin-left: -2rem;
+      background: var(--background-color);
+      border-radius: 8px;
+      padding-right: 30px;
     }
 
     #is-shown:checked ~ slot[name="menu"] {
@@ -56,25 +58,6 @@ export class DropDownElement extends LitElement {
       white-space: nowrap;
     }
     /* css for user-panel */
-
-    .user-name {
-      font-weight: bold;
-    }
-
-    .user-link {
-      color: var(--hero-background-color);
-      text-decoration: none;
-      margin-bottom: 8px;
-      display: block;
-    }
-
-    .sign-out {
-      color: green;
-      cursor: pointer;
-      text-decoration: none;
-      margin-top: 16px;
-      display: block;
-    }
   `;
   _handleChange(ev: InputEvent) {
     const target = ev.target as HTMLInputElement;

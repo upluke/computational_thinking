@@ -11,21 +11,31 @@ export class UserPanel extends LitElement {
     .user-panel {
       background-color: var(--background-color);
 
-      /* padding: 16px; */
-      /* border-radius: 8px; */
+      padding-right: 16px;
+      border-radius: 8px;
     }
 
-    .user-avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      margin-right: 12px;
+    .user-name {
+      font-weight: bold;
     }
 
-    .user-info {
-      /* display: flex; */
-      /* align-items: center; */
-      margin-bottom: 12px;
+    .user-link {
+      color: var(--primary-color);
+      text-decoration: none;
+      margin-bottom: 8px;
+
+      display: block;
+    }
+
+    .sign-out {
+      color: green;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 16px;
+      display: block;
+    }
+    ul {
+      list-style-type: none;
     }
   `;
 
@@ -34,13 +44,16 @@ export class UserPanel extends LitElement {
       <div class="user-panel">
         <div class="user-info">
           <ul>
-            <span class="user-name">Mike</span
-            ><br />
+            <span class="user-name">Mike</span>
+            </br>
             <li><a class="user-link" href="/#">About</a></li>
             <li>
               <a class="user-link" @click=${this.navigateToProfile}>Profile</a>
             </li>
+            <li>
             <a class="sign-out" @click=${this.signOut}>Sign out</a>
+            </li>
+            
           </ul>
         </div>
       </div>
