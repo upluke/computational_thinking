@@ -38,10 +38,12 @@ export class DropDownElement extends LitElement {
       position: absolute;
       top: 100%;
       left: 0;
-      margin-left: -2rem;
+
+      margin-left: -3rem;
       background: var(--background-color);
       border-radius: 8px;
-      padding-right: 30px;
+
+      background: red;
     }
 
     #is-shown:checked ~ slot[name="menu"] {
@@ -53,7 +55,8 @@ export class DropDownElement extends LitElement {
     ::slotted(ul[slot="menu"]),
     slot[name="menu"] > ul {
       margin: 0;
-      padding: 0.25em;
+      //padding: 0.25em;
+
       list-style: none;
       white-space: nowrap;
     }

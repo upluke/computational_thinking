@@ -11,8 +11,7 @@ export class UserPanel extends LitElement {
     .user-panel {
       background-color: var(--background-color);
 
-      padding-right: 16px;
-      border-radius: 8px;
+      padding-right: 30px;
     }
 
     .user-name {
