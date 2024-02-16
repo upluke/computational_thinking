@@ -13,5 +13,8 @@
   "dependencies": {
     "@vaadin/router": "^1.7.5",
     "lit": "^3.1.1"
+  },
+  "devDependencies": {
+    "vite": "^5.1.3"
   }
 }
