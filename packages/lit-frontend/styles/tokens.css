@@ -14,3 +14,20 @@
   /* Transition-duration */
   --transition-duration: 300ms;
 }
+
+body.dark-mode {
+  /* Colors */
+  --primary-color: red;
+  --secondary-color: yellow;
+  --text-color: #222;
+  --background-color: #f9f6ee;
+
+  /* Box Shadows */
+  --box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+
+  /* Radius */
+  --border-radius: 3px;
+
+  /* Transition-duration */
+  --transition-duration: 300ms;
+}
