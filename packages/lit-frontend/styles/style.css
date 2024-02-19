@@ -16,6 +16,7 @@ body {
 header {
   background-color: var(--background-color);
   font-family: "Bebas Neue", sans-serif;
+
   height: 60px;
   top: 0;
   left: 0;
@@ -24,24 +25,11 @@ header {
   position: fixed;
   z-index: 1;
   display: flex;
-  justify-content: space-between;
+
   align-items: center;
   box-shadow: 0 0 25px 0 black;
 }
-/* avatar */
 
-.user-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 12px;
-}
-
-.user-info {
-  /* display: flex; */
-  /* align-items: center; */
-  margin-bottom: 12px;
-}
 /* 
 header * {
   display: inline;

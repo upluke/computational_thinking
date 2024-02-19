@@ -1,4 +1,5 @@
 import { customElement, property } from "lit/decorators.js";
+
 import { html, css, LitElement } from "lit";
 import { Router } from "@vaadin/router";
 @customElement("user-panel")
@@ -52,7 +53,9 @@ export class UserPanel extends LitElement {
             <li>
             <a class="sign-out" @click=${this.signOut}>Sign out</a>
             </li>
+            <li>
             
+        </li>
           </ul>
         </div>
       </div>

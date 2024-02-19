@@ -1,6 +1,7 @@
 import { css, html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-
+import "./toggle-switch";
+import { ToggleSwitchElement } from "./toggle-switch";
 @customElement("nav-bar")
 export class NavBar extends LitElement {
   @property({ reflect: true, type: Boolean })
@@ -9,7 +10,7 @@ export class NavBar extends LitElement {
   render() {
     return html`
       <nav class="nav">
-        <div class="container">
+        <div class="nav-left">
           <h1 class="logo">
             <a href="#">
               <svg class="icon">
@@ -23,16 +24,37 @@ export class NavBar extends LitElement {
             <li><a href="bigo.html">Big-O</a></li>
           </ul>
         </div>
+        <div class="nav-right">
+          <toggle-switch @change=${this._toggleDarkMode}>
+            Dark Mode
+          </toggle-switch>
+          <drop-down>
+            <img
+              class="user-avatar"
+              src="https://www.svgrepo.com/show/382112/female-avatar-girl-face-woman-user-8.svg"
+              alt="User Avatar"
+            />
+            <user-panel slot="menu"></user-panel>
+          </drop-down>
+        </div>
       </nav>
     `;
   }
 
   static styles = css`
-    .nav .container {
-      //background-color: blue;
+    .nav {
       max-width: 1200px;
+      width: 100%;
       margin: 0 auto;
       display: flex;
+      justify-content: space-between;
+    }
+    .nav-left {
+      display: flex;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
     }
     .logo a {
       color: var(--primary-color);
@@ -71,6 +93,21 @@ export class NavBar extends LitElement {
     .nav a:hover {
       color: #588157;
     }
+
+    /* avatar */
+
+    .user-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 12px;
+    }
+
+    .user-info {
+      /* display: flex; */
+      /* align-items: center; */
+      margin-bottom: 12px;
+    }
   `;
 
   _handleChange(ev: InputEvent) {
@@ -96,5 +133,15 @@ export class NavBar extends LitElement {
     } else {
       document.removeEventListener("click", clickawayHandler);
     }
+  }
+
+  _toggleDarkMode(ev: InputEvent) {
+    const target = ev.target as ToggleSwitchElement;
+    const body = document.body;
+
+    console.log("Toggling Dark mode", ev);
+
+    if (target?.on) body.classList.add("dark-mode");
+    else body.classList.remove("dark-mode");
   }
 }
