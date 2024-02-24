@@ -2,6 +2,7 @@
   "name": "lit-frontend",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "app/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,5 +14,8 @@
   "dependencies": {
     "@vaadin/router": "^1.7.5",
     "lit": "^3.1.1"
+  },
+  "devDependencies": {
+    "vite": "^5.1.3"
   }
 }
