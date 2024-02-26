@@ -133,9 +133,13 @@ class SidebarComponent extends LitElement {
 
   render() {
     return html`
+      <link
+        href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+        rel="stylesheet"
+      />
       <div class="sidebar">
         <!-- <h1>DS&ALGO page</h1>-->
-        <!-- <a href="index.html"> Click Here to Go Back Home </a> -->
+        <a href="index.html"> Click Here to Go Back Home </a>
         <div class="logo-details">
           <a href="./index.html"><i class="bx bx-home-alt"></i></a>
           <span class="logo-name">Data Structure & Algorithm</span>
