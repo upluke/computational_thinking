@@ -42,14 +42,22 @@ export class NavBar extends LitElement {
   }
 
   static styles = css`
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :host {
+      width: 100%;
+    }
     .nav {
-      position: fixed;
+      /* position: fixed; */
       width: auto;
       background-color: blue;
-      /* width: 100%; */
+      width: 100%;
       /* margin: 0 auto; */
       display: flex;
-      /* justify-content: space-between; */
+      justify-content: space-between;
     }
     .nav-left {
       display: flex;
