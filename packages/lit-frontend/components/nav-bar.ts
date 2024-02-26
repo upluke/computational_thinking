@@ -43,14 +43,17 @@ export class NavBar extends LitElement {
 
   static styles = css`
     .nav {
-      max-width: 1200px;
-      width: 100%;
-      margin: 0 auto;
+      position: fixed;
+      width: auto;
+      background-color: blue;
+      /* width: 100%; */
+      /* margin: 0 auto; */
       display: flex;
-      justify-content: space-between;
+      /* justify-content: space-between; */
     }
     .nav-left {
       display: flex;
+      background-color: yellow;
     }
     .nav-right {
       display: flex;
