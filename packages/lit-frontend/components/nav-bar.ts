@@ -42,18 +42,27 @@ export class NavBar extends LitElement {
   }
 
   static styles = css`
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :host {
+      width: 100%;
+      height: 85px;
+    }
     .nav {
-      position: fixed;
-      width: auto;
-      background-color: blue;
-      /* width: 100%; */
+      /* width: auto; */
+      /* background-color: blue; */
+      width: 100%;
       /* margin: 0 auto; */
       display: flex;
-      /* justify-content: space-between; */
+      justify-content: space-between;
     }
     .nav-left {
       display: flex;
-      background-color: yellow;
+      /* padding-bottom: 10px; */
+      /* background-color: yellow; */
     }
     .nav-right {
       display: flex;
@@ -67,7 +76,7 @@ export class NavBar extends LitElement {
     }
 
     svg.icon {
-      padding-top: 4px;
+      padding-top: 10px;
       /* display: inline; */
       height: 1.6em;
       width: 1.6em;
@@ -103,6 +112,7 @@ export class NavBar extends LitElement {
       width: 40px;
       height: 40px;
       border-radius: 50%;
+      margin-left: 12px;
       margin-right: 12px;
     }
 
