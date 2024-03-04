@@ -156,19 +156,12 @@ class SidebarComponent extends LitElement {
             </div>
             <ul class="sub-menu">
               <li>
-                <a
-                  href="./pages/dsalgo/static_array.html"
-                  target="contentFrame"
-                  class="link_name"
+                <a href="./pages/dsalgo/static_array.html" class="link_name"
                   >Static Arrays</a
                 >
               </li>
               <li>
-                <a
-                  href="./pages/dsalgo/dynamic_array.html"
-                  target="contentFrame"
-                  >Dynamic Arrays</a
-                >
+                <a href="./pages/dsalgo/dynamic_array.html">Dynamic Arrays</a>
               </li>
               <li><a href="#">Stacks</a></li>
             </ul>
@@ -205,7 +198,8 @@ class SidebarComponent extends LitElement {
         </ul>
       </div>
       <div id="content">
-        <iframe name="contentFrame"></iframe>
+        <page-viewer page-id="algo1"></page-viewer>
+        <page-viewer is-editing="true" page-id="algo1"></page-viewer>
       </div>
     `;
   }

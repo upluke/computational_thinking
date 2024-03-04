@@ -20,8 +20,8 @@ export class NavBar extends LitElement {
           </h1>
           <ul>
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="dsalgo.html">Data Structure & Algorithm</a></li>
-            <li><a href="bigo.html">Big-O</a></li>
+            <li><a href="../app/dsalgo.html">Data Structure & Algorithm</a></li>
+            <li><a href="../app/bigo.html">Big-O</a></li>
           </ul>
         </div>
         <div class="nav-right">
