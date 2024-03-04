@@ -2,7 +2,7 @@ import { css, html, LitElement } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { PageViewer } from "ts-models";
-import { serverPath } from "../app/src/rest";
+import { serverPath } from "../rest";
 @customElement("page-viewer")
 export class PageViewerElement extends LitElement {
   @property({ attribute: "page-id" })
