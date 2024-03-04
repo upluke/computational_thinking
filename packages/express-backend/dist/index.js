@@ -25,6 +25,7 @@ var import_express = __toESM(require("express"));
 var import_cors = __toESM(require("cors"));
 var import_mongoConnect = require("./mongoConnect");
 var import_profiles = __toESM(require("./profiles"));
+var import_pageViewers = __toESM(require("./pageViewers"));
 const app = (0, import_express.default)();
 const port = process.env.PORT || 3e3;
 app.use((0, import_cors.default)());
@@ -37,6 +38,14 @@ app.get("/api/profiles/:userid", (req, res) => {
 app.post("/api/profiles", (req, res) => {
   const newProfile = req.body;
   import_profiles.default.create(newProfile).then((profile) => res.status(201).send(profile)).catch((err) => res.status(500).send(err));
+});
+app.get("/api/pages/:pageid", (req, res) => {
+  const { pageid } = req.params;
+  import_pageViewers.default.get(pageid).then((pageViewer) => res.json(pageViewer)).catch((err) => res.status(404).end());
+});
+app.post("/api/pages", (req, res) => {
+  const newPage = req.body;
+  import_pageViewers.default.create(newPage).then((page) => res.status(201).send(page)).catch((err) => res.status(500).send(err));
 });
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
