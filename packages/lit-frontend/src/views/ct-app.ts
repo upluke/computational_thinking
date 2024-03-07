@@ -5,6 +5,7 @@ import { customElement } from "lit/decorators.js";
 import routes from "../routes";
 //import update from "../update";
 // components
+import "../components/ct-header";
 import "../components/auth-required";
 import "../components/vaadin-router";
 
@@ -18,9 +19,7 @@ export class CTAppElement extends LitElement {
   render() {
     return html`
       <auth-required>
-        <header>
-          <nav-bar>Profile-a </nav-bar>
-        </header>
+        <ct-header> </ct-header>
         <vaadin-router .routes=${routes}> </vaadin-router>
       </auth-required>
     `;

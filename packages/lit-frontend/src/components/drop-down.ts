@@ -60,7 +60,6 @@ export class DropDownElement extends LitElement {
       list-style: none;
       white-space: nowrap;
     }
-    /* css for user-panel */
   `;
   _handleChange(ev: InputEvent) {
     const target = ev.target as HTMLInputElement;

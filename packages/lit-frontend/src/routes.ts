@@ -1,16 +1,20 @@
 import "./views/home-page";
 //import "./views/profile-page";
-//import "./views/destination-page";
+import "./views/dsalgo-page";
 //import "./views/entourage-page";
 
 export default [
+  // {
+  //   path: "/app/profile/:userid",
+  //   component: "profile-page",
+  // },
   {
-    path: "/app/profile/:userid",
-    component: "profile-page",
+    path: "/app/dsalgo-page/:algo",
+    component: "dsalgo-page",
   },
   {
-    path: "/app/:tour([0-9a-f]+)/destination/:dest([0-9]+)",
-    component: "destination-page",
+    path: "/app/dsalgo-page",
+    redirect: "/app/dsalgo-page/static_arrays",
   },
   {
     path: "/app/:tour([0-9a-f]+)/entourage",

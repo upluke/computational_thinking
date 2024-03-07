@@ -1,7 +1,7 @@
 import { css, html, LitElement } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { createContext, provide } from "@lit/context";
-import { APIUser, AuthenticatedUser, FormDataRequest } from "../rest";
+//import { APIUser, AuthenticatedUser, FormDataRequest } from "../rest";
 
 export let authContext = createContext<APIUser>("auth");
 

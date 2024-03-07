@@ -1,7 +1,10 @@
 import { css, html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import "./toggle-switch";
+import "./user-panel";
+import "./drop-down";
 import { ToggleSwitchElement } from "./toggle-switch";
+
 @customElement("nav-bar")
 export class NavBar extends LitElement {
   @property({ reflect: true, type: Boolean })
@@ -122,31 +125,6 @@ export class NavBar extends LitElement {
       margin-bottom: 12px;
     }
   `;
-
-  _handleChange(ev: InputEvent) {
-    const target = ev.target as HTMLInputElement;
-    this._toggle(target.checked);
-  }
-  _toggle(open: boolean) {
-    this.open = open;
-    this._toggleClickAway(open);
-  }
-
-  _toggleClickAway(open: boolean) {
-    const clickawayHandler = (ev: Event) => {
-      if (!ev.composedPath().includes(this)) {
-        this._toggle(false);
-      } else {
-        ev.stopPropagation();
-      }
-    };
-
-    if (open) {
-      document.addEventListener("click", clickawayHandler);
-    } else {
-      document.removeEventListener("click", clickawayHandler);
-    }
-  }
 
   _toggleDarkMode(ev: InputEvent) {
     const target = ev.target as ToggleSwitchElement;

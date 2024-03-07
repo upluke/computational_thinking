@@ -1,15 +1,16 @@
 import { css, html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
+//import styleCSS from "../../styles/style.css?inline";
+
 //import "./toggle-switch";
 
-@customElement("ct-app")
-export class ComputationalThinkingAppElement extends LitElement {
+@customElement("home-page")
+export class HomePageElement extends LitElement {
   render() {
     return html`
-      <header>
-        <nav-bar>Profile-a </nav-bar>
-      </header>
-
+      <link rel="stylesheet" href="../../styles/reset.css" />
+      <link rel="stylesheet" href="../../styles/tokens.css" />
+      <link rel="stylesheet" href="../../styles/style.css" />
       <main>
         <!-- Hero -->
         <div class="hero">
@@ -27,7 +28,7 @@ export class ComputationalThinkingAppElement extends LitElement {
           <!-- Content1 -->
           <div class="content">
             <h2>
-              <a href="../../app/dsalgo.html">Data Structure & Algorithm</a>
+              <a href="/app/dsalgo-page">Data Structure & Algorithm</a>
             </h2>
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima
@@ -37,7 +38,7 @@ export class ComputationalThinkingAppElement extends LitElement {
               quisquam reiciendis omnis nam fugiat sint distinctio totam!
               Laborum illum iusto dicta ratione fuga!
             </p>
-            <a href="../../dsalgo.html"
+            <a href="/app/dsalgo-page"
               ><button class="button" role="button">Check it out</button></a
             >
           </div>
