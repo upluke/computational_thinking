@@ -4,14 +4,15 @@ class SidebarComponent extends LitElement {
   static styles = css`
     /* side menu */
     .sidebar {
-      position: fixed;
+      /* position: fixed; */
       top: 0;
       left: 0;
-      height: 100%;
-      width: 260px;
+      height: 100vh;
+
+      width: 100%;
 
       background: var(--primary-color);
-      z-index: 100;
+      /* z-index: 100; */
       transition: all 0.5s ease;
     }
 

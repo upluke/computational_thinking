@@ -19,13 +19,23 @@ export class DsalgoPage extends LitElement {
   }
 
   render() {
-    return html` <meta charset="UTF-8" />
+    return html` <div id="dsalgo-container">
+      <sidebar-component class="child1"></sidebar-component>
 
-      <div>
-        <sidebar-component></sidebar-component>
-        <page-viewer page-id="${this.algo}"></page-viewer>
-      </div>`;
+      <page-viewer class="child2" page-id="${this.algo}"></page-viewer>
+    </div>`;
   }
 
-  static styles = css``;
+  static styles = css`
+    #dsalgo-container {
+      display: flex;
+    }
+    .child1 {
+      width: 30%;
+    }
+
+    .child2 {
+      width: 70%;
+    }
+  `;
 }

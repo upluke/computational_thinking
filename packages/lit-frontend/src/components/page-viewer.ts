@@ -21,7 +21,7 @@ export class PageViewerElement extends LitElement {
 
   render() {
     return html`
-      <div>
+      <div id="page-viewer-container">
         ${this.isAdmin
           ? html`
               <button @click=${this._handleEditClick}>
@@ -36,7 +36,12 @@ export class PageViewerElement extends LitElement {
   }
 
   static styles = css`
-    // css
+    #page-viewer-container {
+      background-color: orange;
+
+      width: 100%;
+      height: 100vh;
+    }
   `;
 
   _fetchPageContent() {
