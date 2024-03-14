@@ -42,8 +42,6 @@ export class DropDownElement extends LitElement {
       margin-left: -3rem;
       background: var(--background-color);
       border-radius: 8px;
-
-      background: red;
     }
 
     #is-shown:checked ~ slot[name="menu"] {

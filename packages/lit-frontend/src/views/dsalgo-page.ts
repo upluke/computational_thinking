@@ -29,6 +29,7 @@ export class DsalgoPage extends LitElement {
   static styles = css`
     #dsalgo-container {
       display: flex;
+      /* margin-top: 5px; */
     }
     .child1 {
       width: 30%;

@@ -27,6 +27,8 @@ export class ToggleSwitchElement extends LitElement {
       gap: var(--size-spacing-medium);
       line-height: 2em;
       cursor: pointer;
+      color: var(--primary-color);
+      margin-right: 1rem;
     }
     .slider {
       display: inline-block;
@@ -39,7 +41,7 @@ export class ToggleSwitchElement extends LitElement {
       transition: background-color var(--background-color);
     }
     .slider:has(input:checked) {
-      background-color: red;
+      background-color: var(--secondary-color);
     }
     input {
       appearance: none;
@@ -54,7 +56,7 @@ export class ToggleSwitchElement extends LitElement {
       transition: left var(--transition-duration);
     }
     input:checked {
-      left: 1.5em;
+      left: 1em;
     }
   `;
 

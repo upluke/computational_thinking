@@ -2,7 +2,8 @@
   /* Colors */
   --primary-color: #344e41;
   --secondary-color: #588157;
-  --text-color: #222;
+  --hero-text-color: #f9f6ee;
+  --general-text-color: #696969;
   --background-color: #f9f6ee;
 
   /* Box Shadows */
@@ -17,10 +18,13 @@
 
 body.dark-mode {
   /* Colors */
-  --primary-color: red;
-  --secondary-color: yellow;
-  --text-color: #222;
-  --background-color: #f9f6ee;
+  --primary-color: #f9f6ee;
+  --secondary-color: #fdb515;
+  --hero-text-color: #011f4b;
+
+  --general-text-color: #dcdcdc;
+
+  --background-color: #011f4b;
 
   /* Box Shadows */
   --box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);

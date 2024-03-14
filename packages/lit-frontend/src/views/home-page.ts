@@ -73,20 +73,22 @@ export class HomePageElement extends LitElement {
         align-items: center;
         text-align: center;
         position: relative;
-        margin-top: 3rem;
+
         margin-bottom: 20px;
-        color: var(--background-color);
+        /* color: var(--background-color); */
         z-index: -2;
       }
 
       .hero h1 {
         font-size: 46px;
         margin: -20px 0 20px;
+        color: var(--hero-text-color);
       }
 
       .hero p {
         font-size: 20px;
         letter-spacing: 1px;
+        color: var(--hero-text-color);
       }
 
       .content-container {
@@ -109,7 +111,7 @@ export class HomePageElement extends LitElement {
       }
 
       .content p {
-        color: #555;
+        color: var(--general-text-color);
         line-height: 30px;
         letter-spacing: 1.2px;
       }

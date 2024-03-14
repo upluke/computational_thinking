@@ -12,12 +12,14 @@ export class UserPanel extends LitElement {
 
     .user-panel {
       background-color: var(--background-color);
-
+      border: solid var(--primary-color);
       padding-right: 30px;
+      border-radius: var(--border-radius);
     }
 
     .user-name {
       font-weight: bold;
+      color: var(--primary-color);
     }
 
     .user-link {
@@ -38,11 +40,22 @@ export class UserPanel extends LitElement {
     ul {
       list-style-type: none;
     }
+    .button {
+      background-color: var(--primary-color);
+      border: none;
+      color: var(--background-color);
+
+      text-align: center;
+
+      border-radius: var(--border-radius);
+      display: inline-block;
+    }
   `;
 
   @consume({ context: authContext, subscribe: true })
   @property({ attribute: false })
   user = new APIUser();
+
   render() {
     return html`
  
@@ -56,8 +69,8 @@ export class UserPanel extends LitElement {
               <a class="user-link" >Profile</a>
             </li>
             <li>
-            <button slot="logout" @click=${this._signOut}>
-            Log out...
+            <button class="button" slot="logout" @click=${this._signOut}>
+            Log Out
           </button>
             </li>
             <li>

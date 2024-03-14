@@ -44,6 +44,7 @@ export class PageViewerElement extends LitElement {
 
   static styles = css`
     #page-viewer-container {
+      padding-top: 30px;
       background-color: orange;
 
       width: 100%;

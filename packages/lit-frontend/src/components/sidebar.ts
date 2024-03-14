@@ -3,8 +3,10 @@ import { LitElement, html, css } from "lit";
 class SidebarComponent extends LitElement {
   static styles = css`
     /* side menu */
+
     .sidebar {
       /* position: fixed; */
+      padding-top: 30px;
       top: 0;
       left: 0;
       height: 100vh;
@@ -140,7 +142,7 @@ class SidebarComponent extends LitElement {
       />
       <div class="sidebar">
         <!-- <h1>DS&ALGO page</h1>-->
-        <a href="index.html"> Click Here to Go Back Home </a>
+
         <div class="logo-details">
           <a href="./index.html"><i class="bx bx-home-alt"></i></a>
           <span class="logo-name">Data Structure & Algorithm</span>

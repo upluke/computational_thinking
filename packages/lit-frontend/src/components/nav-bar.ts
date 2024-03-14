@@ -22,9 +22,9 @@ export class NavBar extends LitElement {
             </a>
           </h1>
           <ul>
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="../app/dsalgo.html">Data Structure & Algorithm</a></li>
-            <li><a href="../app/bigo.html">Big-O</a></li>
+            <li class="active"><a href="/app">Home</a></li>
+            <li><a href="/app/dsalgo-page">Data Structure & Algorithm</a></li>
+            <li><a href="/app/bigo-page">Big-O</a></li>
           </ul>
         </div>
         <div class="nav-right">
@@ -55,12 +55,15 @@ export class NavBar extends LitElement {
       height: 85px;
     }
     .nav {
+      position: fixed;
       /* width: auto; */
-      /* background-color: blue; */
+      background-color: var(--background-color);
       width: 100%;
+
       /* margin: 0 auto; */
       display: flex;
       justify-content: space-between;
+      z-index: 99;
     }
     .nav-left {
       display: flex;
@@ -96,17 +99,17 @@ export class NavBar extends LitElement {
     }
 
     li a {
-      color: #344e41;
+      color: var(--primary-color);
       font-size: x-large;
       text-decoration: none;
     }
 
     li.active a {
-      color: #588157;
+      color: var(--secondary-color);
     }
 
     .nav a:hover {
-      color: #588157;
+      color: var(--secondary-color);
     }
 
     /* avatar */
