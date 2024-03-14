@@ -1,8 +1,16 @@
 import { css, html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
+type DsalgoLocation = Location & {
+  params: { algo: string };
+  searchParams: Map<string, string>;
+};
+
 @customElement("bigo-page")
 export class BigoPage extends LitElement {
+  @property({ attribute: false })
+  location?: DsalgoLocation;
+
   render() {
     return html` <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />

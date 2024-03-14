@@ -31,7 +31,7 @@ __export(pageViewers_exports, {
   default: () => pageViewers_default
 });
 module.exports = __toCommonJS(pageViewers_exports);
-var import_pageViewer = __toESM(require("./models/mongo/pageViewer"));
+var import_pageViewer = __toESM(require("./mongo/pageViewer"));
 function index() {
   return import_pageViewer.default.find();
 }
@@ -44,4 +44,16 @@ function create(page) {
   const p = new import_pageViewer.default(page);
   return p.save();
 }
-var pageViewers_default = { index, get, create };
+function update(pageid, page) {
+  return new Promise((resolve, reject) => {
+    import_pageViewer.default.findOneAndUpdate({ pageid }, page, {
+      new: true
+    }).then((page2) => {
+      if (page2)
+        resolve(page2);
+      else
+        reject("Failed to update page");
+    });
+  });
+}
+var pageViewers_default = { index, get, create, update };

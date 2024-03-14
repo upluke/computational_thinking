@@ -160,7 +160,7 @@ class SidebarComponent extends LitElement {
                 <a href="./static_arrays" class="link_name">Static Arrays</a>
               </li>
               <li>
-                <a href="./pages/dsalgo/dynamic_array.html">Dynamic Arrays</a>
+                <a href="./dynamic_arrays">Dynamic Arrays</a>
               </li>
               <li><a href="#">Stacks</a></li>
             </ul>
@@ -180,6 +180,22 @@ class SidebarComponent extends LitElement {
               <li><a href="#">Queues</a></li>
             </ul>
           </li>
+          <!-- Graphs  -->
+          <li>
+            <div class="icon-link">
+              <a href="#">
+                <i class="bx bx-reset"></i>
+                <span class="link_name">Graphs</span>
+              </a>
+              <i class="arrow"></i>
+            </div>
+            <ul class="sub-menu">
+              <li><a href="#" class="link_name">Dijkstra's</a></li>
+              <li><a href="#" class="link_name">Prim's</a></li>
+              <li><a href="#" class="link_name">Kruskal's</a></li>
+            </ul>
+          </li>
+
           <!-- Recursiion  -->
           <li>
             <div class="icon-link">
@@ -190,8 +206,24 @@ class SidebarComponent extends LitElement {
               <i class="arrow"></i>
             </div>
             <ul class="sub-menu">
-              <li><a href="#" class="link_name">Recursion 1</a></li>
-              <li><a href="#">Recursion 2</a></li>
+              <li><a href="#" class="link_name">Direct Recursion</a></li>
+              <li><a href="#">Indirect Recursion</a></li>
+            </ul>
+          </li>
+
+          <!-- DP  -->
+          <li>
+            <div class="icon-link">
+              <a href="#">
+                <i class="bx bx-reset"></i>
+                <span class="link_name">Dynamic Programming</span>
+              </a>
+              <i class="arrow"></i>
+            </div>
+            <ul class="sub-menu">
+              <li><a href="#" class="link_name">0/1 Knapsack</a></li>
+              <li><a href="#">LCS</a></li>
+              <li><a href="#">Unbounded Knapsack</a></li>
             </ul>
           </li>
         </ul>

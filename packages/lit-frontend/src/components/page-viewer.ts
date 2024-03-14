@@ -1,4 +1,7 @@
 import { css, html, LitElement } from "lit";
+import { consume } from "@lit/context";
+import { authContext } from "./auth-required";
+import { APIUser, APIRequest } from "../rest";
 import { customElement, property, state } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { PageViewer } from "ts-models";
@@ -7,8 +10,7 @@ import { serverPath } from "../rest";
 export class PageViewerElement extends LitElement {
   @property({ attribute: "page-id" })
   pageId: string = "";
-  @property({ attribute: false })
-  isAdmin: boolean = true;
+
   @property({ attribute: "is-editing" })
   isEditing: boolean = false;
 
@@ -18,11 +20,14 @@ export class PageViewerElement extends LitElement {
   firstUpdated() {
     this._fetchPageContent();
   }
+  @consume({ context: authContext, subscribe: true })
+  @property({ attribute: false })
+  user = new APIUser();
 
   render() {
     return html`
       <div id="page-viewer-container">
-        ${this.isAdmin
+        ${this.user.username === "okguy"
           ? html`
               <button @click=${this._handleEditClick}>
                 ${this.isEditing ? "Cancel" : "Edit"}
@@ -30,7 +35,9 @@ export class PageViewerElement extends LitElement {
             `
           : ""}
         ${unsafeHTML(this.page.content)}
-        ${this.isAdmin && this.isEditing ? this._renderEditForm() : ""}
+        ${this.user.username === "okguy" && this.isEditing
+          ? this._renderEditForm()
+          : ""}
       </div>
     `;
   }

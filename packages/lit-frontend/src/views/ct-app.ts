@@ -14,6 +14,10 @@ export class CTAppElement extends LitElement {
   constructor() {
     //super(update);
     super();
+    this.addEventListener("mvu:message", (ev: Event) => {
+      const msg = (ev as CustomEvent).detail;
+      console.log("Got message:", msg);
+    });
   }
 
   render() {

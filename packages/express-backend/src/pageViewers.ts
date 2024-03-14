@@ -1,7 +1,7 @@
 // src/profiles.ts
 import { Document } from "mongoose";
 import { PageViewer } from "ts-models";
-import PageViewerModel from "./models/mongo/pageViewer";
+import PageViewerModel from "./mongo/pageViewer";
 
 function index(): Promise<PageViewer[]> {
   return PageViewerModel.find();
@@ -20,4 +20,15 @@ function create(page: PageViewer): Promise<PageViewer> {
   return p.save();
 }
 
-export default { index, get, create };
+function update(pageid: String, page: PageViewer): Promise<PageViewer> {
+  return new Promise((resolve, reject) => {
+    PageViewerModel.findOneAndUpdate({ pageid }, page, {
+      new: true,
+    }).then((page) => {
+      if (page) resolve(page);
+      else reject("Failed to update page");
+    });
+  });
+}
+
+export default { index, get, create, update };

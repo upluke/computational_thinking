@@ -1,6 +1,6 @@
 // src/models/mongo/profile.ts
 import { Schema, Model, Document, model } from "mongoose";
-import { Profile } from "../profile";
+import { Profile } from "../models/profile";
 
 const profileSchema = new Schema<Profile>(
   {

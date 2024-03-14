@@ -17,6 +17,10 @@ export default [
     redirect: "/app/dsalgo-page/static_arrays",
   },
   {
+    path: "/app/bigo-page/:algo",
+    component: "dsalgo-page",
+  },
+  {
     path: "/app/:tour([0-9a-f]+)/entourage",
     component: "entourage-page",
   },

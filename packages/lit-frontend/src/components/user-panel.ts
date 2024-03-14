@@ -1,7 +1,8 @@
-import { customElement } from "lit/decorators.js";
-
+import { customElement, property, state } from "lit/decorators.js";
+import { consume } from "@lit/context";
 import { html, css, LitElement } from "lit";
-import { Router } from "@vaadin/router";
+import { APIUser, APIRequest } from "../rest";
+import { authContext } from "./auth-required";
 @customElement("user-panel")
 export class UserPanel extends LitElement {
   static styles = css`
@@ -39,20 +40,25 @@ export class UserPanel extends LitElement {
     }
   `;
 
+  @consume({ context: authContext, subscribe: true })
+  @property({ attribute: false })
+  user = new APIUser();
   render() {
     return html`
  
       <div class="user-panel">
         <div class="user-info">
           <ul>
-            <span class="user-name">Mike</span>
+            <span class="user-name">${this.user.username}</span>
             </br>
             <li><a class="user-link" href="/#">About</a></li>
             <li>
-              <a class="user-link" @click=${this.navigateToProfile}>Profile</a>
+              <a class="user-link" >Profile</a>
             </li>
             <li>
-            <a class="sign-out" @click=${this.signOut}>Sign out</a>
+            <button slot="logout" @click=${this._signOut}>
+            Log out...
+          </button>
             </li>
             <li>
             
@@ -62,10 +68,8 @@ export class UserPanel extends LitElement {
       </div>
     `;
   }
-  signOut() {
-    console.log("Signing out...");
-  }
-  navigateToProfile() {
-    Router.go("/user-profile");
+  _signOut() {
+    console.log("Signout");
+    this.user.signOut();
   }
 }
