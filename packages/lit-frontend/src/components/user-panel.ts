@@ -69,6 +69,8 @@ export class UserPanel extends LitElement {
           <ul>
             <span class="user-name">${this.user.username}</span>
             </br>
+            </br>
+           
             <li><a class="user-link" href="/#">About</a></li>
             <li>
               <a class="user-link" >Profile</a>

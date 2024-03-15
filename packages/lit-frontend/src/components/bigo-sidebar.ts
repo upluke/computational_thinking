@@ -14,26 +14,30 @@ export class BigoSidebarComponent extends LitElement {
 
         <div class="logo-details">
           <a href="/app"><i class="bx bx-home-alt"></i></a>
-          <span class="logo-name">Big O</span>
+          <span class="logo-name">Big O Notation</span>
         </div>
         <ul class="nav-links">
-          <!-- Arrays  -->
+          <!-- BigO -->
           <li>
             <div class="icon-link">
               <a href="#">
-                <i class="bx bx-grid"></i>
-                <span class="link_name">Arrays</span>
+                <i class="bx bx-package"></i>
+                <span class="link_name">Big O(*)</span>
               </a>
               <!-- <i class="bx bxs-chevron-down arrow"></i> -->
             </div>
             <ul class="sub-menu">
               <li>
-                <a href="./static_arrays" class="link_name">Static Arrays</a>
+                <a href="./constant" class="link_name">Constant</a>
               </li>
               <li>
-                <a href="./dynamic_arrays">Dynamic Arrays</a>
+                <a href="./linear">Linear</a>
               </li>
-              <li><a href="#">Stacks</a></li>
+              <li><a href="./porabola">Parabola</a></li>
+              <li><a href="./log">Log</a></li>
+              <li><a href="./nlog">nlog</a></li>
+              <li><a href="./exponential">Exeponential</a></li>
+              <li><a href="./square_root">Square Root</a></li>
             </ul>
           </li>
         </ul>

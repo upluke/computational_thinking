@@ -51,7 +51,7 @@ export class AlgoSidebarComponent extends LitElement {
                   >Singly Linked Lists</a
                 >
               </li>
-              <li><a href="#">Doubly Linked Lists</a></li>
+              <li><a href="./doubly_linked_lists">Doubly Linked Lists</a></li>
               <li><a href="#">Queues</a></li>
             </ul>
           </li>
@@ -65,8 +65,8 @@ export class AlgoSidebarComponent extends LitElement {
               <i class="arrow"></i>
             </div>
             <ul class="sub-menu">
-              <li><a href="#" class="link_name">Dijkstra's</a></li>
-              <li><a href="#" class="link_name">Prim's</a></li>
+              <li><a href="./dijkstra_s" class="link_name">Dijkstra's</a></li>
+              <li><a href="./prim_s" class="link_name">Prim's</a></li>
               <li><a href="#" class="link_name">Kruskal's</a></li>
             </ul>
           </li>

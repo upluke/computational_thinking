@@ -27,7 +27,7 @@ export class PageViewerElement extends LitElement {
   render() {
     return html`
       <div id="page-viewer-container">
-        ${this.user.username === "okguy"
+        ${this.user.username === "admin"
           ? html`
               <button @click=${this._handleEditClick}>
                 ${this.isEditing ? "Cancel" : "Edit"}
@@ -35,7 +35,7 @@ export class PageViewerElement extends LitElement {
             `
           : ""}
         ${unsafeHTML(this.page.content)}
-        ${this.user.username === "okguy" && this.isEditing
+        ${this.user.username === "admin" && this.isEditing
           ? this._renderEditForm()
           : ""}
       </div>

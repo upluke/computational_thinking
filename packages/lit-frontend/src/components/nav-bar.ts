@@ -34,7 +34,7 @@ export class NavBar extends LitElement {
           <drop-down>
             <img
               class="user-avatar"
-              src="https://www.svgrepo.com/show/382112/female-avatar-girl-face-woman-user-8.svg"
+              src="https://www.svgrepo.com/show/420351/avatar-boy-kid.svg"
               alt="User Avatar"
             />
             <user-panel slot="menu"></user-panel>

@@ -12,11 +12,8 @@ export class HomePageElement extends LitElement {
         <!-- Hero -->
         <div class="hero">
           <div class="container">
-            <h1>Welcome to Computational Thinking!!!</h1>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Adipisci, illum?
-            </p>
+            <h1>Welcome to Computational Thinking</h1>
+            <p>Here is a platform where we can share what we learn together.</p>
           </div>
         </div>
 
@@ -28,12 +25,9 @@ export class HomePageElement extends LitElement {
               <a href="/app/dsalgo-page">Data Structure & Algorithm</a>
             </h2>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima
-              eaque qui dolor voluptatem et! Illo dolore repellat voluptatibus
-              dolorum velit, sit id voluptas et adipisci consectetur fuga
-              assumenda odio, commodi nobis nostrum! Nobis soluta eos, illo
-              quisquam reiciendis omnis nam fugiat sint distinctio totam!
-              Laborum illum iusto dicta ratione fuga!
+              Data structures and algorithms are essential concepts in computer
+              science. They involve organizing and processing data efficiently
+              to solve problems and develop software applications.
             </p>
             <a href="/app/dsalgo-page"
               ><button class="button" role="button">Check it out</button></a
@@ -44,12 +38,10 @@ export class HomePageElement extends LitElement {
           <div class="content">
             <h2><a href="/app/bigo-page">Big-O Notation</a></h2>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima
-              eaque qui dolor voluptatem et! Illo dolore repellat voluptatibus
-              dolorum velit, sit id voluptas et adipisci consectetur fuga
-              assumenda odio, commodi nobis nostrum! Nobis soluta eos, illo
-              quisquam reiciendis omnis nam fugiat sint distinctio totam!
-              Laborum illum iusto dicta ratione fuga!
+              Big O notation is a fundamental concept in computer science used
+              to analyze the efficiency of algorithms. It provides a way to
+              describe the upper bound or worst-case scenario of an algorithm's
+              time or space complexity.
             </p>
             <a href="/app/bigo-page"
               ><button class="button" role="button">Check it out</button></a
@@ -93,10 +85,14 @@ export class HomePageElement extends LitElement {
 
       .content-container {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
       .content {
-        margin: 3rem;
+        flex: 0 1 35%;
+        margin: 3rem 1rem;
+
         padding: 2rem;
         box-shadow: var(--box-shadow);
         border-radius: var(--border-radius);
@@ -132,6 +128,11 @@ export class HomePageElement extends LitElement {
         background-color: var(--secondary-color);
         transition: all var(--transition-duration) ease;
         cursor: pointer;
+      }
+      @media (max-width: 768px) {
+        .content {
+          flex-basis: 70%;
+        }
       }
     `,
   ];
