@@ -8,7 +8,7 @@
   --side-bar-hover-fond-color: #fff;
   --side-bar-background: #dcdcdc;
   /* Box Shadows */
-  --box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  --box-shadow: 0 4px 5px #588157;
 
   /* Radius */
   --border-radius: 3px;
@@ -28,7 +28,7 @@ body.dark-mode {
   --background-color: #011f4b;
 
   /* Box Shadows */
-  --box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  --box-shadow: 0 4px 5px #fdb515;
 
   /* Radius */
   --border-radius: 3px;
