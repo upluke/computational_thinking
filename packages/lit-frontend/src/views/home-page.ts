@@ -13,7 +13,7 @@ export class HomePageElement extends LitElement {
         <div class="hero">
           <div class="container">
             <h1>Welcome to Computational Thinking</h1>
-            <p>Here is a platform where we can share what we learn together.</p>
+            <p>Here is the platform where we can share and learn together.</p>
           </div>
         </div>
 
@@ -21,14 +21,16 @@ export class HomePageElement extends LitElement {
         <div class="content-container">
           <!-- Content1 -->
           <div class="content">
-            <h2>
-              <a href="/app/dsalgo-page">Data Structure & Algorithm</a>
-            </h2>
-            <p>
-              Data structures and algorithms are essential concepts in computer
-              science. They involve organizing and processing data efficiently
-              to solve problems and develop software applications.
-            </p>
+            <div>
+              <h2>
+                <a href="/app/dsalgo-page">Data Structure & Algorithm</a>
+              </h2>
+              <p>
+                Data structures and algorithms are essential concepts in
+                computer science. They involve organizing and processing data
+                efficiently to solve problems and develop software applications.
+              </p>
+            </div>
             <a href="/app/dsalgo-page"
               ><button class="button" role="button">Check it out</button></a
             >
@@ -36,6 +38,7 @@ export class HomePageElement extends LitElement {
 
           <!-- Content2 -->
           <div class="content">
+          <div>
             <h2><a href="/app/bigo-page">Big-O Notation</a></h2>
             <p>
               Big O notation is a fundamental concept in computer science used

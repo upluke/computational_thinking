@@ -47,7 +47,7 @@ export class PageViewerElement extends LitElement {
       background-color: var(--hero-text-color);
       padding: 3rem 5rem;
       width: 100%;
-      height: 100vh;
+      height: 100%;
       color: var(--general-text-color);
     }
     button {
