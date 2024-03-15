@@ -24,9 +24,9 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 var import_express = __toESM(require("express"));
 var import_cors = __toESM(require("cors"));
 var import_mongoConnect = require("./mongoConnect");
-var import_profiles = __toESM(require("./profiles"));
+var import_profiles = __toESM(require("./services/profiles"));
 var import_auth = require("./auth");
-var import_pageViewers = __toESM(require("./pageViewers"));
+var import_pageViewers = __toESM(require("./services/pageViewers"));
 const app = (0, import_express.default)();
 const port = process.env.PORT || 3e3;
 app.use((0, import_cors.default)());
