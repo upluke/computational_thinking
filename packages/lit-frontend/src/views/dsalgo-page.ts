@@ -1,6 +1,6 @@
 import { css, html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import "../components/sidebar";
+import "../components/dsalgo-sidebar";
 import "../components/page-viewer";
 
 type DsalgoLocation = Location & {
@@ -20,7 +20,7 @@ export class DsalgoPage extends LitElement {
 
   render() {
     return html` <div id="dsalgo-container">
-      <sidebar-component class="child1"></sidebar-component>
+      <dsalgo-sidebar-component class="child1"></dsalgo-sidebar-component>
 
       <page-viewer class="child2" page-id="${this.algo}"></page-viewer>
     </div>`;

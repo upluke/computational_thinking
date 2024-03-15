@@ -1,6 +1,8 @@
 import { LitElement, html, css } from "lit";
+import { customElement, property, state } from "lit/decorators.js";
 
-class SidebarComponent extends LitElement {
+@customElement("bigo-sidebar-component")
+export class BigoSidebarComponent extends LitElement {
   render() {
     return html`
       <link
@@ -8,11 +10,11 @@ class SidebarComponent extends LitElement {
         rel="stylesheet"
       />
       <div class="sidebar">
-        <!-- <h1>DS&ALGO page</h1>-->
+        <!-- <h1>Bigo page</h1>-->
 
         <div class="logo-details">
           <a href="/app"><i class="bx bx-home-alt"></i></a>
-          <span class="logo-name">Data Structure & Algorithm</span>
+          <span class="logo-name">Big O</span>
         </div>
         <ul class="nav-links">
           <!-- Arrays  -->
@@ -32,67 +34,6 @@ class SidebarComponent extends LitElement {
                 <a href="./dynamic_arrays">Dynamic Arrays</a>
               </li>
               <li><a href="#">Stacks</a></li>
-            </ul>
-          </li>
-          <!-- Linked Lists  -->
-          <li>
-            <div class="icon-link">
-              <a href="#">
-                <i class="bx bx-git-commit"></i>
-                <span class="link_name">Linked Lists</span>
-              </a>
-              <!-- <i class="bx bxs-chevron-down arrow"></i> -->
-            </div>
-            <ul class="sub-menu">
-              <li><a href="#" class="link_name">Singly Linked Lists</a></li>
-              <li><a href="#">Doubly Linked Lists</a></li>
-              <li><a href="#">Queues</a></li>
-            </ul>
-          </li>
-          <!-- Graphs  -->
-          <li>
-            <div class="icon-link">
-              <a href="#">
-                <i class="bx bx-sitemap"></i>
-                <span class="link_name">Graphs</span>
-              </a>
-              <i class="arrow"></i>
-            </div>
-            <ul class="sub-menu">
-              <li><a href="#" class="link_name">Dijkstra's</a></li>
-              <li><a href="#" class="link_name">Prim's</a></li>
-              <li><a href="#" class="link_name">Kruskal's</a></li>
-            </ul>
-          </li>
-
-          <!-- Recursiion  -->
-          <li>
-            <div class="icon-link">
-              <a href="#">
-                <i class="bx bx-reset"></i>
-                <span class="link_name">Recursion</span>
-              </a>
-              <i class="arrow"></i>
-            </div>
-            <ul class="sub-menu">
-              <li><a href="#" class="link_name">Direct Recursion</a></li>
-              <li><a href="#">Indirect Recursion</a></li>
-            </ul>
-          </li>
-
-          <!-- DP  -->
-          <li>
-            <div class="icon-link">
-              <a href="#">
-                <i class="bx bx-table"></i>
-                <span class="link_name">DP</span>
-              </a>
-              <i class="arrow"></i>
-            </div>
-            <ul class="sub-menu">
-              <li><a href="#" class="link_name">0/1 Knapsack</a></li>
-              <li><a href="#">LCS</a></li>
-              <li><a href="#">Unbounded Knapsack</a></li>
             </ul>
           </li>
         </ul>
@@ -144,7 +85,7 @@ class SidebarComponent extends LitElement {
     }
     .sidebar .nav-links {
       height: 100%;
-      padding: 30px 0 150px 0;
+      //padding: 30px 0 150px 0;
       overflow: auto;
     }
 
@@ -235,4 +176,4 @@ class SidebarComponent extends LitElement {
   `;
 }
 
-customElements.define("sidebar-component", SidebarComponent);
+//customElements.define("sidebar-component", SidebarComponent);

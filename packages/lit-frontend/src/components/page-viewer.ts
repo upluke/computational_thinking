@@ -54,7 +54,7 @@ export class PageViewerElement extends LitElement {
       background-color: var(--primary-color);
       border: none;
       color: var(--background-color);
-
+      margin-top: 10px;
       text-align: center;
       padding: 10px 30px;
       border-radius: var(--border-radius);
@@ -65,6 +65,28 @@ export class PageViewerElement extends LitElement {
       background-color: var(--secondary-color);
       transition: all var(--transition-duration) ease;
       cursor: pointer;
+    }
+    .textarea {
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: #333;
+      width: 100%;
+      min-height: 150px;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+    }
+
+    .textarea:focus {
+      outline: none;
+      border-color: #66afe9;
+    }
+
+    .textarea::placeholder {
+      color: #aaa;
     }
   `;
 
@@ -90,7 +112,9 @@ export class PageViewerElement extends LitElement {
   _renderEditForm() {
     return html`
       <form @submit=${this._handleEditSubmit}>
-        <textarea name="content">${this.page.content}</textarea>
+        <textarea class="textarea" name="content">
+${this.page.content}</textarea
+        >
         <button type="submit">Save</button>
       </form>
     `;

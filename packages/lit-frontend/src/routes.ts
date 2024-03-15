@@ -2,7 +2,7 @@ import "./views/home-page";
 //import "./views/profile-page";
 import "./views/dsalgo-page";
 //import "./views/entourage-page";
-
+import "./views/bigo-page";
 export default [
   // {
   //   path: "/app/profile/:userid",
@@ -17,8 +17,20 @@ export default [
     redirect: "/app/dsalgo-page/static_arrays",
   },
   {
-    path: "/app/bigo-page/:algo",
+    path: "/app/dsalgo-page/:algo",
     component: "dsalgo-page",
+  },
+  {
+    path: "/app/bigo-page/:bigo",
+    component: "bigo-page",
+  },
+  {
+    path: "/app/bigo-page",
+    redirect: "/app/bigo-page/constant",
+  },
+  {
+    path: "/app/bigo-page/:bigo",
+    component: "bigo-page",
   },
   {
     path: "/app/:tour([0-9a-f]+)/entourage",
