@@ -64,6 +64,7 @@ export class NavBar extends LitElement {
       display: flex;
       justify-content: space-between;
       z-index: 99;
+      box-shadow: 0 0 8px 0 var(--secondary-color);
     }
     .nav-left {
       display: flex;

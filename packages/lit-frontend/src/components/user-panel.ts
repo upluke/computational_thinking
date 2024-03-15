@@ -50,6 +50,11 @@ export class UserPanel extends LitElement {
       border-radius: var(--border-radius);
       display: inline-block;
     }
+    button:hover {
+      background-color: var(--secondary-color);
+      transition: all var(--transition-duration) ease;
+      cursor: pointer;
+    }
   `;
 
   @consume({ context: authContext, subscribe: true })

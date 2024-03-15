@@ -44,11 +44,27 @@ export class PageViewerElement extends LitElement {
 
   static styles = css`
     #page-viewer-container {
-      padding-top: 30px;
-      background-color: orange;
-
+      background-color: var(--hero-text-color);
+      padding: 3rem 5rem;
       width: 100%;
       height: 100vh;
+      color: var(--general-text-color);
+    }
+    button {
+      background-color: var(--primary-color);
+      border: none;
+      color: var(--background-color);
+
+      text-align: center;
+      padding: 10px 30px;
+      border-radius: var(--border-radius);
+      display: inline-block;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: var(--secondary-color);
+      transition: all var(--transition-duration) ease;
+      cursor: pointer;
     }
   `;
 

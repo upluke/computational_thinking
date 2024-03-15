@@ -19,7 +19,8 @@ export class BlazingHeaderElement extends LitElement {
     unsafeCSS(resetCSS),
     css`
       header {
-        background-color: var(--background-color);
+        /* background-color: var(--background-color); */
+
         font-family: "Bebas Neue", sans-serif;
 
         height: 60px;
@@ -30,7 +31,6 @@ export class BlazingHeaderElement extends LitElement {
         display: flex;
 
         align-items: center;
-        box-shadow: 0 0 25px 0 black;
       }
     `,
   ];

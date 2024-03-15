@@ -32,11 +32,11 @@ export class DsalgoPage extends LitElement {
       /* margin-top: 5px; */
     }
     .child1 {
-      width: 30%;
+      width: 25%;
     }
 
     .child2 {
-      width: 70%;
+      width: 75%;
     }
   `;
 }
