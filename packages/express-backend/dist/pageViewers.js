@@ -26,34 +26,34 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 ));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
-var profiles_exports = {};
-__export(profiles_exports, {
-  default: () => profiles_default
+var pageViewers_exports = {};
+__export(pageViewers_exports, {
+  default: () => pageViewers_default
 });
-module.exports = __toCommonJS(profiles_exports);
-var import_profile2 = __toESM(require("./mongo/profile"));
+module.exports = __toCommonJS(pageViewers_exports);
+var import_pageViewer = __toESM(require("./mongo/pageViewer"));
 function index() {
-  return import_profile2.default.find();
+  return import_pageViewer.default.find();
 }
-function get(userid) {
-  return import_profile2.default.find({ userid }).then((list) => list[0]).catch((err) => {
-    throw `${userid} Not Found`;
+function get(pageid) {
+  return import_pageViewer.default.find({ pageid }).then((list) => list[0]).catch((err) => {
+    throw `${pageid} Not Found`;
   });
 }
-function create(profile) {
-  const p = new import_profile2.default(profile);
+function create(page) {
+  const p = new import_pageViewer.default(page);
   return p.save();
 }
-function update(userid, profile) {
+function update(pageid, page) {
   return new Promise((resolve, reject) => {
-    import_profile2.default.findOneAndUpdate({ userid }, profile, {
+    import_pageViewer.default.findOneAndUpdate({ pageid }, page, {
       new: true
-    }).then((profile2) => {
-      if (profile2)
-        resolve(profile2);
+    }).then((page2) => {
+      if (page2)
+        resolve(page2);
       else
-        reject("Failed to update profile");
+        reject("Failed to update page");
     });
   });
 }
-var profiles_default = { index, get, create, update };
+var pageViewers_default = { index, get, create, update };
