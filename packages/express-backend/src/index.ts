@@ -2,11 +2,11 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
 import { connect } from "./mongoConnect";
-import profiles from "./profiles";
+import profiles from "./services/profiles";
 import { Profile } from "ts-models";
 import { loginUser, registerUser } from "./auth";
 import { PageViewer } from "ts-models";
-import pageViewers from "./pageViewers";
+import pageViewers from "./services/pageViewers";
 
 const app = express();
 const port = process.env.PORT || 3000;

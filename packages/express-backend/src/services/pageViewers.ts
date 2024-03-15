@@ -1,7 +1,7 @@
 // src/profiles.ts
 import { Document } from "mongoose";
 import { PageViewer } from "ts-models";
-import PageViewerModel from "./mongo/pageViewer";
+import PageViewerModel from "../mongo/pageViewer";
 
 function index(): Promise<PageViewer[]> {
   return PageViewerModel.find();

@@ -53,7 +53,7 @@ export class BigoSidebarComponent extends LitElement {
       padding-top: 30px;
       top: 0;
       left: 0;
-      height: 100vh;
+      height: 100%;
 
       width: 100%;
 

@@ -45,9 +45,11 @@ export class PageViewerElement extends LitElement {
   static styles = css`
     #page-viewer-container {
       background-color: var(--hero-text-color);
-      padding: 3rem 5rem;
-      width: 100%;
-      height: 100vh;
+
+      margin: 0 auto;
+      padding: 50px;
+      width: 70%;
+      height: 100%;
       color: var(--general-text-color);
     }
     button {
@@ -87,6 +89,30 @@ export class PageViewerElement extends LitElement {
 
     .textarea::placeholder {
       color: #aaa;
+    }
+
+    // page content
+
+    .container {
+    }
+    h1 {
+      color: var(--general-text-color);
+      text-align: center;
+      margin-top: 20px;
+    }
+    h2 {
+      color: #666;
+    }
+    p {
+      color: var(--general-text-color);
+    }
+    .image-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .complexity-image {
+      max-width: 100%;
+      height: auto;
     }
   `;
 

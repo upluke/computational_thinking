@@ -29,14 +29,16 @@ export class DsalgoPage extends LitElement {
   static styles = css`
     #dsalgo-container {
       display: flex;
-      /* margin-top: 5px; */
+      /* height: 100%; */
     }
     .child1 {
       width: 25%;
+      /* height: 100%; */
     }
 
     .child2 {
       width: 75%;
+      /* height: 100%; */
     }
   `;
 }

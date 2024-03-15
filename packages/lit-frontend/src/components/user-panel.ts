@@ -9,7 +9,9 @@ export class UserPanel extends LitElement {
     :host {
       display: block;
     }
-
+    #user-name {
+      color: var(--secondary-color);
+    }
     .user-panel {
       background-color: var(--background-color);
       border: solid var(--primary-color);
@@ -67,7 +69,7 @@ export class UserPanel extends LitElement {
       <div class="user-panel">
         <div class="user-info">
           <ul>
-            <span class="user-name">${this.user.username}</span>
+            <span id="user-name" class="user-name">${this.user.username}</span>
             </br>
             </br>
            
