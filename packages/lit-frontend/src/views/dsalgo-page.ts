@@ -2,6 +2,7 @@ import { css, html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import "../components/dsalgo-sidebar";
 import "../components/page-viewer";
+import * as App from "../app";
 
 type DsalgoLocation = Location & {
   params: { algo: string };
@@ -9,7 +10,8 @@ type DsalgoLocation = Location & {
 };
 
 @customElement("dsalgo-page")
-export class DsalgoPage extends LitElement {
+//export class DsalgoPage extends LitElement {
+export class DsalgoPage extends App.View {
   @property({ attribute: false })
   location?: DsalgoLocation;
 
