@@ -31,7 +31,11 @@ export interface ProfileSaved extends MsgType<"ProfileSaved"> {
   profile: Profile;
 }
 
-export interface pageViewerSelected extends MsgType<"pageViewerSelected"> {
+export interface PageViewerSelected extends MsgType<"PageViewerSelected"> {
+  pageid: string;
+}
+
+export interface PageViewerSaved extends MsgType<"PageViewerSelected"> {
   pageid: string;
   content: string;
 }
@@ -40,7 +44,7 @@ export type Message =
   | ProfileSelected
   | ProfileSaved
   | UserLoggedIn
-  | pageViewerSelected;
+  | PageViewerSelected;
 
 export class Main
   extends MVU.Main<Model, Message>
