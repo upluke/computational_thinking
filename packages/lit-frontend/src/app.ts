@@ -9,7 +9,7 @@ export interface Model {
   credential?: Credential;
   user: APIUser;
   profile?: Profile;
-  pageViewer?: PageViewer;
+  page?: PageViewer;
 }
 
 export const context = createContext<Model>("CTModel");
@@ -35,7 +35,7 @@ export interface PageViewerSelected extends MsgType<"PageViewerSelected"> {
   pageid: string;
 }
 
-export interface PageViewerSaved extends MsgType<"PageViewerSelected"> {
+export interface PageViewerSaved extends MsgType<"PageViewerSaved"> {
   pageid: string;
   content: string;
 }
@@ -44,7 +44,8 @@ export type Message =
   | ProfileSelected
   | ProfileSaved
   | UserLoggedIn
-  | PageViewerSelected;
+  | PageViewerSelected
+  | PageViewerSaved;
 
 export class Main
   extends MVU.Main<Model, Message>

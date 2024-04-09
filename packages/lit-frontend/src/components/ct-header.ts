@@ -1,9 +1,9 @@
 import { css, html, LitElement, unsafeCSS } from "lit";
-import { customElement, property, state } from "lit/decorators.js";
+import { customElement } from "lit/decorators.js";
 
 import "./nav-bar";
 
-import resetCSS from "/src/styles/reset.css?inline";
+import resetCSS from "../../src/styles/reset.css?inline";
 
 @customElement("ct-header")
 export class BlazingHeaderElement extends LitElement {

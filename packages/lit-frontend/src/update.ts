@@ -74,15 +74,15 @@ dispatch.addMessage("PageViewerSelected", (msg: App.Message) => {
         return json as PageViewer;
       }
     })
-    .then((pageViewer: PageViewer | undefined) =>
-      pageViewer ? App.updateProps({ pageViewer }) : App.noUpdate
+    .then((page: PageViewer | undefined) =>
+      page ? App.updateProps({ page }) : App.noUpdate
     );
 });
 
 dispatch.addMessage("PageViewerSaved", (msg: App.Message) => {
   const { pageid, content } = msg as App.PageViewerSaved;
 
-  return new JSONRequest(content)
+  return new JSONRequest({ content })
     .put(`/pages/${pageid}`)
     .then((response: Response) => {
       if (response.status === 200) {
@@ -93,11 +93,11 @@ dispatch.addMessage("PageViewerSaved", (msg: App.Message) => {
     .then((json: unknown) => {
       if (json) {
         console.log("PageViewer:", json);
-        json as PageViewer;
+        return json as PageViewer;
       }
       return undefined;
     })
-    .then((pageViewer: PageViewer | undefined) =>
-      pageViewer ? App.updateProps({ pageViewer }) : App.noUpdate
+    .then((page: PageViewer | undefined) =>
+      page ? App.updateProps({ page }) : App.noUpdate
     );
 });
