@@ -29,10 +29,6 @@ export default [
     redirect: "/app/bigo-page/constant",
   },
   {
-    path: "/app/bigo-page/:bigo",
-    component: "bigo-page",
-  },
-  {
     path: "/app/:tour([0-9a-f]+)/entourage",
     component: "entourage-page",
   },

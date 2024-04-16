@@ -6,19 +6,29 @@ import { customElement, property, state } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { PageViewer } from "ts-models";
 import { serverPath } from "../rest";
+import * as App from "../app";
+
 @customElement("page-viewer")
-export class PageViewerElement extends LitElement {
+// export class PageViewerElement extends LitElement {
+export class PageViewerElement extends App.View {
   @property({ attribute: "page-id" })
   pageId: string = "";
 
   @property({ attribute: "is-editing" })
   isEditing: boolean = false;
 
-  @state()
-  page: PageViewer = { pageid: this.pageId, content: "<h1>My page</h1>" };
-
+  // @state()
+  // page: PageViewer = { pageid: this.pageId, content: "<h1>My page</h1>" };
+  @property()
+  get page() {
+    return this.getFromModel<PageViewer>("page");
+  }
   firstUpdated() {
-    this._fetchPageContent();
+    // this._fetchPageContent();
+    this.dispatchMessage({
+      type: "PageViewerSelected",
+      pageid: this.pageId,
+    });
   }
   @consume({ context: authContext, subscribe: true })
   @property({ attribute: false })
@@ -34,7 +44,7 @@ export class PageViewerElement extends LitElement {
               </button>
             `
           : ""}
-        ${unsafeHTML(this.page.content)}
+        ${unsafeHTML(this.page?.content)}
         ${this.user.username === "admin" && this.isEditing
           ? this._renderEditForm()
           : ""}
@@ -116,22 +126,22 @@ export class PageViewerElement extends LitElement {
     }
   `;
 
-  _fetchPageContent() {
-    fetch(serverPath(`/pages/${this.pageId}`))
-      .then((response) => {
-        if (response.status == 200) {
-          return response.json();
-        }
-      })
-      .then((json) => {
-        if (json) {
-          this.page = json as PageViewer;
-        }
-      })
-      .catch((error) => {
-        console.log("front end error: ", error);
-      });
-  }
+  // _fetchPageContent() {
+  //   fetch(serverPath(`/pages/${this.pageId}`))
+  //     .then((response) => {
+  //       if (response.status == 200) {
+  //         return response.json();
+  //       }
+  //     })
+  //     .then((json) => {
+  //       if (json) {
+  //         this.page = json as PageViewer;
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.log("front end error: ", error);
+  //     });
+  // }
   _handleEditClick() {
     this.isEditing = !this.isEditing;
   }
@@ -139,7 +149,7 @@ export class PageViewerElement extends LitElement {
     return html`
       <form @submit=${this._handleEditSubmit}>
         <textarea class="textarea" name="content">
-${this.page.content}</textarea
+${this.page?.content}</textarea
         >
         <button type="submit">Save</button>
       </form>
@@ -153,22 +163,31 @@ ${this.page.content}</textarea
     const formData = new FormData(event.target);
     const content = formData.get("content");
 
-    fetch(serverPath(`/pages/${this.pageId}`), {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ content }),
-    })
-      .then((response) => {
-        if (response.ok) {
-          this.isEditing = false;
-          return response.json();
-        }
-      })
-      .then((json: unknown) => {
-        if (json) this.page = json as PageViewer;
-      })
-      .catch((error) => {
-        console.error(`Error updating page content: ${error}`);
-      });
+    // mvu
+    this.dispatchMessage({
+      type: "PageViewerSaved",
+      content: content?.toString() || "",
+      pageid: this.pageId,
+    });
+    this.isEditing = false;
+
+    // default
+    // fetch(serverPath(`/pages/${this.pageId}`), {
+    //   method: "PUT",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({ content }),
+    // })
+    //   .then((response) => {
+    //     if (response.ok) {
+    //       this.isEditing = false;
+    //       return response.json();
+    //     }
+    //   })
+    //   .then((json: unknown) => {
+    //     // if (json) this.page = json as PageViewer;
+    //   })
+    //   .catch((error) => {
+    //     console.error(`Error updating page content: ${error}`);
+    //   });
   }
 }
