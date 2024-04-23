@@ -6,7 +6,11 @@ import profiles from "./services/profiles";
 import { Profile } from "ts-models";
 import { loginUser, registerUser } from "./auth";
 import { PageViewer } from "ts-models";
+import * as path from "path";
 import pageViewers from "./services/pageViewers";
+import fs from "node:fs/promises";
+const indexHtml = require.resolve("lit-frontend");
+const dist = path.dirname(indexHtml);
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -15,6 +19,17 @@ app.use(cors());
 app.use(express.json());
 connect("comp-thinking");
 
+//>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// static assets: /styles, /images, /icons, etc.
+app.use(express.static(dist));
+
+// SPA routes: /app/...
+app.use("/app", (req, res) => {
+  fs.readFile(indexHtml, { encoding: "utf8" }).then((html) => res.send(html));
+});
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>
 app.post("/login", loginUser);
 app.post("/signup", registerUser);
 // profile ---------------------------

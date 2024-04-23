@@ -26,12 +26,20 @@ var import_cors = __toESM(require("cors"));
 var import_mongoConnect = require("./mongoConnect");
 var import_profiles = __toESM(require("./services/profiles"));
 var import_auth = require("./auth");
+var path = __toESM(require("path"));
 var import_pageViewers = __toESM(require("./services/pageViewers"));
+var import_promises = __toESM(require("node:fs/promises"));
+const indexHtml = require.resolve("lit-frontend");
+const dist = path.dirname(indexHtml);
 const app = (0, import_express.default)();
 const port = process.env.PORT || 3e3;
 app.use((0, import_cors.default)());
 app.use(import_express.default.json());
 (0, import_mongoConnect.connect)("comp-thinking");
+app.use(import_express.default.static(dist));
+app.use("/app", (req, res) => {
+  import_promises.default.readFile(indexHtml, { encoding: "utf8" }).then((html) => res.send(html));
+});
 app.post("/login", import_auth.loginUser);
 app.post("/signup", import_auth.registerUser);
 app.get("/api/profiles/:userid", (req, res) => {
