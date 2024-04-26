@@ -9,7 +9,7 @@ import { PageViewer } from "ts-models";
 import * as path from "path";
 import pageViewers from "./services/pageViewers";
 import fs from "node:fs/promises";
-const indexHtml = require.resolve("lit-frontend");
+const indexHtml = require.resolve("lit-frontend"); // get the abs path to index.html in frontend
 const dist = path.dirname(indexHtml);
 
 const app = express();
@@ -22,7 +22,7 @@ connect("comp-thinking");
 //>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 // static assets: /styles, /images, /icons, etc.
-app.use(express.static(dist));
+app.use(express.static(dist)); // if anything no route for, try to find it in disc
 
 // SPA routes: /app/...
 app.use("/app", (req, res) => {

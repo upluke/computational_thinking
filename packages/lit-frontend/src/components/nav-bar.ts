@@ -17,7 +17,7 @@ export class NavBar extends LitElement {
           <h1 class="logo">
             <a href="/app">
               <svg class="icon">
-                <use href="../../icons/icons.svg#web-icon" />
+                <use href="/icons/icons.svg#web-icon" />
               </svg>
             </a>
           </h1>

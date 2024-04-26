@@ -1,6 +1,6 @@
 //const SERVER_ROOT = "http://localhost:3000";
 // const API_ROOT = "http://localhost:3000/api"; // back end api; here's pointg to the backend
-const SERVER_ROOT = window.location.origin;
+const SERVER_ROOT = window.location.origin; // server servers the current page I'm on
 const API_PATH = "/api";
 const TOKEN_KEY = "JWT_AUTH_TOKEN";
 

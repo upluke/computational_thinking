@@ -961,7 +961,7 @@ ${(r=this.page)==null?void 0:r.content}</textarea
           <h1 class="logo">
             <a href="/app">
               <svg class="icon">
-                <use href="../../icons/icons.svg#web-icon" />
+                <use href="/icons/icons.svg#web-icon" />
               </svg>
             </a>
           </h1>
