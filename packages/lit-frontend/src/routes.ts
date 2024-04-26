@@ -28,11 +28,6 @@ export default [
     path: "/app/bigo-page",
     redirect: "/app/bigo-page/constant",
   },
-  {
-    path: "/app/:tour([0-9a-f]+)/entourage",
-    component: "entourage-page",
-  },
-  { path: "/app/:tour([0-9a-f]+)", component: "tour-page" },
   { path: "/app", component: "home-page" },
   { path: "(.*)", redirect: "/app" },
 ];
