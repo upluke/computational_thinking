@@ -37,11 +37,12 @@ export class DropDownElement extends LitElement {
       display: none;
       position: absolute;
       top: 100%;
-      left: 0;
+      right: 0;
 
       margin-left: -3rem;
       background: var(--background-color);
       border-radius: 8px;
+      width: max-content;
     }
 
     #is-shown:checked ~ slot[name="menu"] {

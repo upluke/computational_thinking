@@ -13,6 +13,8 @@ export class UserPanel extends LitElement {
       color: var(--secondary-color);
     }
     .user-panel {
+      padding: 0.5rem;
+      margin: 0;
       background-color: var(--background-color);
       border: solid var(--primary-color);
       padding-right: 30px;
@@ -65,29 +67,22 @@ export class UserPanel extends LitElement {
 
   render() {
     return html`
- 
-      <div class="user-panel">
-        <div class="user-info">
-          <ul>
-            <span id="user-name" class="user-name">${this.user.username}</span>
-            </br>
-            </br>
-           
-            <li><a class="user-link" href="/#">About</a></li>
-            <li>
-              <a class="user-link" >Profile</a>
-            </li>
-            <li>
-            <button class="button" slot="logout" @click=${this._signOut}>
+      <ul class="user-panel">
+        <li>
+          <slot name="avatar"></slot>
+          <span id="user-name" class="user-name">${this.user.username}</span>
+        </li>
+        <slot></slot>
+        <li><a class="user-link" href="/#">About</a></li>
+        <li>
+          <a class="user-link">Profile</a>
+        </li>
+        <li>
+          <button class="button" slot="logout" @click=${this._signOut}>
             Log Out
           </button>
-            </li>
-            <li>
-            
         </li>
-          </ul>
-        </div>
-      </div>
+      </ul>
     `;
   }
   _signOut() {

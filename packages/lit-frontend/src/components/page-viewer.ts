@@ -55,11 +55,11 @@ export class PageViewerElement extends App.View {
   static styles = css`
     #page-viewer-container {
       background-color: var(--hero-text-color);
-
+      /* overflow:auto */
       margin: 0 auto;
       padding: 50px;
       width: 70%;
-      height: 100%;
+      height: 100vh;
       color: var(--general-text-color);
     }
     button {

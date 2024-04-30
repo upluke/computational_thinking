@@ -12,7 +12,11 @@ export class NavBar extends LitElement {
 
   render() {
     return html`
-      <nav class="nav">
+      <link
+        href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+        rel="stylesheet"
+      />
+      <nav class="nav" id="myTopnav">
         <div class="nav-left">
           <h1 class="logo">
             <a href="/app">
@@ -21,6 +25,8 @@ export class NavBar extends LitElement {
               </svg>
             </a>
           </h1>
+        </div>
+        <div class="nav-mid">
           <ul>
             <li class="active"><a href="/app">Home</a></li>
             <li><a href="/app/dsalgo-page">Data Structure & Algorithm</a></li>
@@ -28,16 +34,28 @@ export class NavBar extends LitElement {
           </ul>
         </div>
         <div class="nav-right">
-          <toggle-switch @change=${this._toggleDarkMode}>
-            Dark Mode
-          </toggle-switch>
           <drop-down>
-            <img
-              class="user-avatar"
-              src="https://www.svgrepo.com/show/420351/avatar-boy-kid.svg"
-              alt="User Avatar"
-            />
-            <user-panel slot="menu"></user-panel>
+            <i class="bx bx-menu"></i>
+            <user-panel slot="menu">
+              <img
+                slot="avatar"
+                class="user-avatar"
+                src="https://www.svgrepo.com/show/420351/avatar-boy-kid.svg"
+                alt="User Avatar"
+              />
+
+              <li class="burger"><a href="/app">Home</a></li>
+              <li class="burger">
+                <a href="/app/dsalgo-page">Data Structure & Algorithm</a>
+              </li>
+              <li class="burger"><a href="/app/bigo-page">Big-O</a></li>
+
+              <li>
+                <toggle-switch @change=${this._toggleDarkMode}>
+                  Dark Mode
+                </toggle-switch>
+              </li>
+            </user-panel>
           </drop-down>
         </div>
       </nav>
@@ -53,13 +71,14 @@ export class NavBar extends LitElement {
     :host {
       width: 100%;
       height: 85px;
+      /* z-index: 99; */
     }
     .nav {
       position: fixed;
-      /* width: auto; */
-      background-color: var(--background-color);
       width: 100%;
+      background-color: var(--background-color);
 
+      /* overflow: hidden; */
       /* margin: 0 auto; */
       display: flex;
       justify-content: space-between;
@@ -70,6 +89,10 @@ export class NavBar extends LitElement {
       display: flex;
       /* padding-bottom: 10px; */
       /* background-color: yellow; */
+    }
+    .nav-mid {
+      /* display: flex; */
+      flex-grow: 1;
     }
     .nav-right {
       display: flex;
@@ -90,18 +113,20 @@ export class NavBar extends LitElement {
       vertical-align: top;
       fill: currentColor;
     }
-    ul {
+    .nav-mid ul {
       display: flex;
       list-style-type: none;
       padding-top: 8px;
     }
-    li {
+    .nav-mid li {
       margin: 20px;
     }
 
+    .nav-mid li a {
+      font-size: x-large;
+    }
     li a {
       color: var(--primary-color);
-      font-size: x-large;
       text-decoration: none;
     }
 
@@ -128,6 +153,30 @@ export class NavBar extends LitElement {
       /* align-items: center; */
       margin-bottom: 12px;
     }
+
+    .nav-mid {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .nav-mid {
+        display: block;
+      }
+
+      /* .nav-right {
+        display: none;
+      } */
+      /* .nav {
+        display: flex;
+        justify-content: flex-end;
+      } */
+      .nav .burger {
+        display: none;
+      }
+      /* .nav .burger {
+        display: block;
+      } */
+    }
   `;
 
   _toggleDarkMode(ev: InputEvent) {
@@ -138,5 +187,10 @@ export class NavBar extends LitElement {
 
     if (target?.on) body.classList.add("dark-mode");
     else body.classList.remove("dark-mode");
+  }
+
+  _handleBurgerClick() {
+    let x = document.getElementById("myTopnav");
+    console.log("&&&&&", x);
   }
 }
