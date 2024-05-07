@@ -34,13 +34,19 @@ export class DsalgoPage extends App.View {
       /* height: 100%; */
     }
     .child1 {
-      width: 25%;
+      flex-basis: 25%;
       /* height: 100%; */
     }
 
     .child2 {
-      width: 75%;
+      flex-basis: 75%;
       /* height: 100%; */
+    }
+
+    @media (max-width: 768px) {
+      #dsalgo-container {
+        display: block;
+      }
     }
   `;
 }

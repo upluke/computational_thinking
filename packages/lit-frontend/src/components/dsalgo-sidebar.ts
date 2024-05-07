@@ -3,6 +3,24 @@ import { customElement, property, state } from "lit/decorators.js";
 
 @customElement("dsalgo-sidebar-component")
 export class AlgoSidebarComponent extends LitElement {
+  @state()
+  isMenuOpen: boolean = false;
+  @state()
+  subMenuOpen: string = "";
+
+  toggleMenu() {
+    console.log("click!!!!");
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  toggleSubMenu(s: string) {
+    if (this.subMenuOpen !== s) {
+      this.subMenuOpen = s;
+    } else {
+      this.subMenuOpen = "";
+    }
+  }
+
   render() {
     return html`
       <link
@@ -14,19 +32,23 @@ export class AlgoSidebarComponent extends LitElement {
 
         <div class="logo-details">
           <a href="/app"><i class="bx bx-home-alt"></i></a>
-          <span class="logo-name">Data Structure & Algorithm</span>
+          <span class="logo-name" @click="${this.toggleMenu}"
+            >Data Structure & Algorithm</span
+          >
         </div>
-        <ul class="nav-links">
+        <ul class="nav-links ${this.isMenuOpen ? "showMenu" : "hideMenu"}">
           <!-- Arrays  -->
           <li>
             <div class="icon-link">
-              <a href="#">
+              <a href="#" @click="${() => this.toggleSubMenu("array")}">
                 <i class="bx bx-grid"></i>
                 <span class="link_name">Arrays</span>
               </a>
               <!-- <i class="bx bxs-chevron-down arrow"></i> -->
             </div>
-            <ul class="sub-menu">
+            <ul
+              class="sub-menu ${this.subMenuOpen == "array" ? "showMenu" : ""}"
+            >
               <li>
                 <a href="./static_arrays" class="link_name">Static Arrays</a>
               </li>
@@ -108,7 +130,9 @@ export class AlgoSidebarComponent extends LitElement {
 
   static styles = css`
     /* side menu */
-
+    * {
+      box-sizing: border-box;
+    }
     .sidebar {
       /* position: fixed; */
       padding-top: 30px;
@@ -181,7 +205,7 @@ export class AlgoSidebarComponent extends LitElement {
 
     .sidebar .nav-links li .sub-menu,
     .sidebar .nav-links li .arrow {
-      display: block !important;
+      display: block;
     }
     .sidebar .nav-links li a {
       display: flex;
@@ -198,12 +222,18 @@ export class AlgoSidebarComponent extends LitElement {
     .sidebar .nav-links li .sub-menu {
       padding: 6px 6px 14px 80px;
       margin-top: -10px;
-      /* background: var(--side-bar-background); */
-      display: none;
+
+      /* max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease; */
     }
     .sidebar .nav-links li.showMenu .sub-menu {
       display: block;
+      padding: 6px 6px 14px 80px;
+      margin-top: -10px;
+      /* max-height: 200px; */
     }
+
     .sidebar .nav-links li .sub-menu a {
       color: var(--background-color);
       font-size: 15px;
@@ -237,6 +267,20 @@ export class AlgoSidebarComponent extends LitElement {
       width: 100%;
       height: 100vh;
       border: none;
+    }
+    @media (max-width: 768px) {
+      .sidebar .logo-details .logo-name {
+        cursor: pointer;
+      }
+      .sidebar .nav-links.hideMenu {
+        display: none;
+      }
+      .sidebar .nav-links li .sub-menu {
+        display: none;
+      }
+      .sidebar .nav-links li .sub-menu.showMenu {
+        display: block;
+      }
     }
   `;
 }
