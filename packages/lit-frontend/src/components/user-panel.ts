@@ -78,6 +78,11 @@ export class UserPanel extends LitElement {
           <a class="user-link">Profile</a>
         </li>
         <li>
+          <button class="button" slot="login" @click=${this._signIn}>
+            Log In
+          </button>
+        </li>
+        <li>
           <button class="button" slot="logout" @click=${this._signOut}>
             Log Out
           </button>
@@ -88,5 +93,14 @@ export class UserPanel extends LitElement {
   _signOut() {
     console.log("Signout");
     this.user.signOut();
+  }
+  _signIn() {
+    console.log("SignIn", this);
+    const event = new CustomEvent("secure", {
+      bubbles: true,
+      composed: true,
+      detail: {},
+    });
+    this.dispatchEvent(event); // sent to tree
   }
 }

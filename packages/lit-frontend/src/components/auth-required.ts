@@ -1,5 +1,5 @@
 import { css, html, LitElement } from "lit";
-import { customElement, state } from "lit/decorators.js";
+import { customElement, property, state } from "lit/decorators.js";
 import { createContext, provide } from "@lit/context";
 import { APIUser, AuthenticatedUser, FormDataRequest } from "../rest";
 
@@ -7,6 +7,9 @@ export let authContext = createContext<APIUser>("auth");
 
 @customElement("auth-required")
 export class AuthRequiredElement extends LitElement {
+  @property()
+  secure: boolean = false;
+
   @state()
   loginStatus: number = 0;
 
@@ -28,6 +31,14 @@ export class AuthRequiredElement extends LitElement {
     if (this.isAuthenticated()) {
       this._dispatchUserLoggedIn(this.user as AuthenticatedUser);
     }
+  }
+
+  constructor() {
+    super();
+    this.addEventListener("secure", () => {
+      this.secure = true;
+      console.log("secure");
+    });
   }
 
   render() {
@@ -72,11 +83,12 @@ export class AuthRequiredElement extends LitElement {
           </p>
           <p></p>
         </form>
+        <button @click=${this._closeDialog}>Close</button>
       </dialog>
     `;
 
     return html`
-      ${this.isAuthenticated() ? "" : dialog}
+      ${this.isAuthenticated() || !this.secure ? "" : dialog}
       <slot></slot>
     `;
   }
@@ -111,6 +123,11 @@ export class AuthRequiredElement extends LitElement {
       grid-column: 2;
     }
   `;
+
+  _closeDialog() {
+    console.log("close dialog");
+    this.secure = false;
+  }
 
   _handleLogin(event: SubmitEvent) {
     event.preventDefault();
