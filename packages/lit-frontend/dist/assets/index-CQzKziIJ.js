@@ -1133,6 +1133,11 @@ ${(i=this.page)==null?void 0:i.content}</textarea
       display: none;
     }
 
+    .bx-menu {
+      font-size: 45px; /* Adjust the size as needed */
+      color: var(--secondary-color); /* Change the color as needed */
+    }
+
     @media (min-width: 768px) {
       .nav-mid {
         display: block;
