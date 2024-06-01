@@ -37,7 +37,7 @@ export class PageViewerElement extends App.View {
   render() {
     return html`
       <div id="page-viewer-container">
-        ${this.user.username === "admin"
+        ${this.user.username === "luke"
           ? html`
               <button @click=${this._handleEditClick}>
                 ${this.isEditing ? "Cancel" : "Edit"}
@@ -45,7 +45,7 @@ export class PageViewerElement extends App.View {
             `
           : ""}
         ${unsafeHTML(this.page?.content)}
-        ${this.user.username === "admin" && this.isEditing
+        ${this.user.username === "luke" && this.isEditing
           ? this._renderEditForm()
           : ""}
       </div>

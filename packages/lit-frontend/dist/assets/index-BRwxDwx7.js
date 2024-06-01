@@ -485,6 +485,7 @@
       display: contents;
     }
     dialog {
+      margin-top: 5rem;
       display: flex;
       gap: 4rem;
     }
@@ -519,13 +520,13 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */class Re extends Qi{constructor(e){if(super(e),this.et=g,e.type!==Gi.CHILD)throw Error(this.constructor.directiveName+"() can only be used in child bindings")}render(e){if(e===g||e==null)return this.vt=void 0,this.et=e;if(e===k)return e;if(typeof e!="string")throw Error(this.constructor.directiveName+"() called with a non-string value");if(e===this.et)return this.vt;this.et=e;const t=[e];return t.raw=t,this.vt={_$litType$:this.constructor.resultType,strings:t,values:[]}}}Re.directiveName="unsafeHTML",Re.resultType=1;const Xi=Ji(Re);var Yi=Object.defineProperty,Zi=Object.getOwnPropertyDescriptor,ne=(i,e,t,r)=>{for(var n=r>1?void 0:r?Zi(e,t):e,s=i.length-1,o;s>=0;s--)(o=i[s])&&(n=(r?o(e,t,n):o(n))||n);return r&&n&&Yi(e,t,n),n};let L=class extends Ne{constructor(){super(...arguments),this.pageId="",this.isEditing=!1,this.user=new x}get page(){return this.getFromModel("page")}firstUpdated(){this.dispatchMessage({type:"PageViewerSelected",pageid:this.pageId})}render(){var i;return f`
       <div id="page-viewer-container">
-        ${this.user.username==="admin"?f`
+        ${this.user.username==="luke"?f`
               <button @click=${this._handleEditClick}>
                 ${this.isEditing?"Cancel":"Edit"}
               </button>
             `:""}
         ${Xi((i=this.page)==null?void 0:i.content)}
-        ${this.user.username==="admin"&&this.isEditing?this._renderEditForm():""}
+        ${this.user.username==="luke"&&this.isEditing?this._renderEditForm():""}
       </div>
     `}_handleEditClick(){this.isEditing=!this.isEditing}_renderEditForm(){var i;return f`
       <form @submit=${this._handleEditSubmit}>

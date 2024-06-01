@@ -98,6 +98,7 @@ export class AuthRequiredElement extends LitElement {
       display: contents;
     }
     dialog {
+      margin-top: 5rem;
       display: flex;
       gap: 4rem;
     }
