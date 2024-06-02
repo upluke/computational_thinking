@@ -3,6 +3,8 @@ import "./views/home-page";
 import "./views/dsalgo-page";
 //import "./views/entourage-page";
 import "./views/bigo-page";
+
+import "./views/pl-page";
 export default [
   // {
   //   path: "/app/profile/:userid",
@@ -28,6 +30,15 @@ export default [
     path: "/app/bigo-page",
     redirect: "/app/bigo-page/constant",
   },
+  {
+    path: "/app/pl-page/:pl",
+    component: "pl-page",
+  },
+  {
+    path: "/app/pl-page",
+    redirect: "/app/pl-page/python_syntax",
+  },
+
   { path: "/app", component: "home-page" },
   { path: "(.*)", redirect: "/app" },
 ];

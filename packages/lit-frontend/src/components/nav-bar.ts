@@ -30,6 +30,7 @@ export class NavBar extends LitElement {
           <ul>
             <li class="active"><a href="/app">Home</a></li>
             <li><a href="/app/dsalgo-page">Data Structure & Algorithm</a></li>
+            <li><a href="/app/pl-page">Programming Languages</a></li>
             <li><a href="/app/bigo-page">Big-O</a></li>
           </ul>
         </div>
