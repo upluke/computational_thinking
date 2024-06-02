@@ -77,16 +77,21 @@ export class UserPanel extends LitElement {
         <li>
           <a class="user-link">Profile</a>
         </li>
-        <li>
-          <button class="button" slot="login" @click=${this._signIn}>
-            Log In
-          </button>
-        </li>
-        <li>
-          <button class="button" slot="logout" @click=${this._signOut}>
-            Log Out
-          </button>
-        </li>
+        ${this.user.username !== "Temp_user"
+          ? html`
+              <li>
+                <button class="button" slot="logout" @click=${this._signOut}>
+                  Log Out
+                </button>
+              </li>
+            `
+          : html`
+              <li>
+                <button class="button" slot="login" @click=${this._signIn}>
+                  Log In
+                </button>
+              </li>
+            `}
       </ul>
     `;
   }

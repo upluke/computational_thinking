@@ -6,10 +6,11 @@ const TOKEN_KEY = "JWT_AUTH_TOKEN";
 
 export class APIUser {
   authenticated = false;
-  username = "fellow_traveler";
+  username = "Temp_user";
   signOut = () => {};
 
   static _theUser = new APIUser();
+  isLoggedIn: any;
 
   static deauthenticate(user: APIUser) {
     const anon = new APIUser();

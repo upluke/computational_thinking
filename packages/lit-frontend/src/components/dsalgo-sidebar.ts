@@ -55,7 +55,9 @@ export class AlgoSidebarComponent extends LitElement {
               <li>
                 <a href="./dynamic_arrays">Dynamic Arrays</a>
               </li>
-              <li><a href="#">Stacks</a></li>
+              <li>
+                <a href="./stacks">Stacks</a>
+              </li>
             </ul>
           </li>
           <!-- Linked Lists  -->
