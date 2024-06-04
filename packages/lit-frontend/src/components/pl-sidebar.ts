@@ -3,6 +3,9 @@ import { customElement, property, state } from "lit/decorators.js";
 
 @customElement("pl-sidebar-component")
 export class PLSidebarComponent extends LitElement {
+  @property({ attribute: "page-id" })
+  pageId: string = "";
+
   @state()
   isMenuOpen: boolean = false;
 
@@ -22,6 +25,18 @@ export class PLSidebarComponent extends LitElement {
     // if (this.isMenuOpen && this.subMenuOpen === s) {
     //   this.isMenuOpen = false;
     // }
+  }
+
+  attributeChangedCallback(
+    name: string,
+    _old: string | null,
+    value: string | null
+  ): void {
+    if (name === "page-id" && _old !== value && value !== null) {
+      const [prefix] = value.split("_");
+      this.subMenuOpen = prefix;
+      this.isMenuOpen = true;
+    }
   }
 
   render() {

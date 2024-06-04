@@ -22,7 +22,10 @@ export class PlPage extends App.View {
 
   render() {
     return html` <div id="dsalgo-container">
-      <pl-sidebar-component class="child1"></pl-sidebar-component>
+      <pl-sidebar-component
+        page-id="${this.pl}"
+        class="child1"
+      ></pl-sidebar-component>
 
       <page-viewer class="child2" page-id="${this.pl}"></page-viewer>
     </div>`;
