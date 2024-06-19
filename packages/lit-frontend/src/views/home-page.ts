@@ -12,8 +12,8 @@ export class HomePageElement extends LitElement {
         <!-- Hero -->
         <div class="hero">
           <div class="container">
-            <h1>Welcome to Computational Thinking</h1>
-            <p>Here is the platform where we can share and learn together.</p>
+            <h1>Welcome to DSA Notes!</h1>
+            <p>Here's where you can access all the notes covered in our workshops:)</p>
           </div>
         </div>
 
