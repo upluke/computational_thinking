@@ -1,4 +1,4 @@
-import { Schema, Model, Document, model } from "mongoose";
+import { Schema, Document, model } from "mongoose";
 import { Credential } from "ts-models";
 
 const credentialSchema = new Schema<Credential>(
@@ -12,6 +12,10 @@ const credentialSchema = new Schema<Credential>(
       type: String,
       required: true,
     },
+    // role: {
+    //   type: String,
+    //   required: false,
+    // },
   },
   { collection: "user_credentials" }
 );
